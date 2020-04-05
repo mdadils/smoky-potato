@@ -1,27 +1,38 @@
 import React from "react";
 
-import Pink1 from "./Pink1";
-import Parkin from "./Parkin";
-import DJ1 from "./DJ1";
-import Dopamine from "./Dopamine";
-import Trap1 from "./Trap1";
-import HtrA2 from "./HtrA2";
-import MPP from "./MPP";
-import Uchl1 from "./Uchl1";
+import Factors5Points from "./Factors5Points";
+import Factors3Points from "./Factors3Points";
 
 import "./style.css";
 
-const FirstColumn = () => {
+const FirstColumn = ({
+  dJ1,
+  mPP,
+  htrA2,
+  trap1,
+  uchl1,
+  pink1,
+  parkin,
+  dopamine,
+  onDJ1Change,
+  onDopChange,
+  onMPPChange,
+  onPink1Change,
+  onTrap1Change,
+  onHtrA2Change,
+  onUCHL1Change,
+  onParkinChange,
+}) => {
   return (
     <div className="col-1 box-container">
-      <Pink1 />
-      <Parkin />
-      <DJ1 />
-      <Trap1 />
-      <HtrA2 />
-      <Uchl1 />
-      <Dopamine />
-      <MPP />
+      <Factors5Points name="Pink1" onChange={onPink1Change} value={pink1} />
+      <Factors5Points name="Parkin" onChange={onParkinChange} value={parkin} />
+      <Factors5Points name="DJ1" onChange={onDJ1Change} value={dJ1} />
+      <Factors5Points name="Trap1" onChange={onTrap1Change} value={trap1} />
+      <Factors5Points name="HtrA2" onChange={onHtrA2Change} value={htrA2} />
+      <Factors5Points name="Uchl1" onChange={onUCHL1Change} value={uchl1} />
+      <Factors3Points name="Dopamine" onChange={onDopChange} value={dopamine} />
+      <Factors3Points name="mPP" onChange={onMPPChange} value={mPP} />
     </div>
   );
 };

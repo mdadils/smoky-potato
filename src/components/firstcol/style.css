@@ -2,9 +2,24 @@
   padding: 1em;
   margin: 1em 0;
   text-align: center;
-  border: 2px solid #a6c43a;
+  border: 2px solid #ddd;
   border-radius: 4px;
   width: 20em;
+}
+
+.box.mutate {
+  border: 2px solid #d52a35;
+}
+.box.low {
+  border: 2px solid #e8d934;
+}
+
+.box.high {
+  border: 2px solid #691ba4;
+}
+
+.box.oe {
+  border: 2px solid #245bc2;
 }
 
 .ant-slider-mark-text {
