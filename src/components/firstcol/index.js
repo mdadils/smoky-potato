@@ -1,7 +1,8 @@
 import React from "react";
 
 import Factors5Points from "./Factors5Points";
-import Factors3Points from "./Factors3Points";
+import Factors2Points from "./Factors2Points";
+import Factors4Points from "./Factors4Points_Ox";
 
 import "./style.css";
 
@@ -31,8 +32,8 @@ const FirstColumn = ({
       <Factors5Points name="Trap1" onChange={onTrap1Change} value={trap1} />
       <Factors5Points name="HtrA2" onChange={onHtrA2Change} value={htrA2} />
       <Factors5Points name="Uchl1" onChange={onUCHL1Change} value={uchl1} />
-      <Factors3Points name="Dopamine" onChange={onDopChange} value={dopamine} />
-      <Factors3Points name="mPP" onChange={onMPPChange} value={mPP} />
+      <Factors4Points name="Dopamine" onChange={onDopChange} value={dopamine} />
+      <Factors2Points name="mPP" onChange={onMPPChange} value={mPP} />
     </div>
   );
 };

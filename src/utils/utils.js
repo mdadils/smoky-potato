@@ -6,18 +6,23 @@ export const SliderStateClassMap = {
   2: "oe",
 };
 
-export const Marks5Points = {
+export const Marks4Points = {
   "-2": "Mutate",
   "-1": "Low",
   0: "Normal",
-  1: "High",
-  2: "OE",
+  1: "OE",
 };
 
-export const Marks3Points = {
+export const Marks4PointsOxidized = {
+  "-2": "Oxidized",
   "-1": "Low",
   0: "Normal",
   1: "High",
+};
+
+export const Marks2Points = {
+  0: "Absent",
+  1: "Present",
 };
 
 export const initialState = {
@@ -29,10 +34,11 @@ export const initialState = {
   pink1: 0,
   parkin: 0,
   dopamine: 0,
+
   up: "",
   atp: "",
   rOS: "",
-  h2O2: "sdsdfsdf",
+  h2O2: "",
   dopaN: "",
   oxygen: "",
   calcium: "",
@@ -41,4 +47,17 @@ export const initialState = {
   mtIntegrity: "",
   fissionFusion: "",
   membranePotential: "",
+
+  upClass: "",
+  atpClass: "",
+  rOSClass: "",
+  h2O2Class: "",
+  dopaNClass: "",
+  oxygenClass: "",
+  calciumClass: "",
+  alphaSynClass: "",
+  apoptosisClass: "",
+  mtIntegrityClass: "",
+  fissionFusionClass: "",
+  membranePotentialClass: "",
 };

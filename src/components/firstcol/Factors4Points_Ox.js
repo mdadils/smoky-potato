@@ -2,12 +2,12 @@ import React from "react";
 
 import { Slider } from "antd";
 
-import { SliderStateClassMap, Marks4Points } from "../../utils/utils";
+import { SliderStateClassMap, Marks4PointsOxidized } from "../../utils/utils";
 
 const Factors = ({ value, onChange, name }) => {
   return (
-    <div className={`box ${SliderStateClassMap[value]}`}>
-      <span className="factor-name p5">{name}</span>
+    <div className={`box p4 oxidized ${SliderStateClassMap[value]}`}>
+      <span className="factor-name">{name}</span>
       <Slider
         range
         max={1}
@@ -15,7 +15,7 @@ const Factors = ({ value, onChange, name }) => {
         value={[value]}
         included={true}
         onChange={onChange}
-        marks={Marks4Points}
+        marks={Marks4PointsOxidized}
       />
     </div>
   );
