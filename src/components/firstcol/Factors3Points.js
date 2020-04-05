@@ -7,7 +7,7 @@ import { SliderStateClassMap, Marks3Points } from "../../utils/utils";
 const Factors = ({ value, onChange, name }) => {
   return (
     <div className={`box ${SliderStateClassMap[value]}`}>
-      <span>{name}</span>
+      <span className="factor-name p3">{name}</span>
       <Slider
         marks={Marks3Points}
         min={-1}

@@ -6,18 +6,13 @@ import "./App.css";
 import FirstColumn from "./components/firstcol";
 import SecondCol from "./components/secondCol";
 
+import { initialState } from "./utils/utils";
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dJ1: 0,
-      mPP: 0,
-      htrA2: 0,
-      trap1: 0,
-      uchl1: 0,
-      pink1: 0,
-      parkin: 0,
-      dopamine: 0,
+      ...initialState,
     };
   }
 
@@ -53,6 +48,10 @@ class App extends Component {
     this.setState({ mPP: value });
   };
 
+  resetAll = () => {
+    this.setState(...initialState);
+  };
+
   render(props) {
     const {
       dJ1,
@@ -63,6 +62,19 @@ class App extends Component {
       pink1,
       parkin,
       dopamine,
+
+      up,
+      atp,
+      rOS,
+      h2O2,
+      dopaN,
+      oxygen,
+      calcium,
+      alphaSyn,
+      apoptosis,
+      mtIntegrity,
+      fissionFusion,
+      membranePotential,
     } = this.state;
     return (
       <div className="app-container">
@@ -84,7 +96,20 @@ class App extends Component {
           onUCHL1Change={this.onUCHL1Change}
           onParkinChange={this.onParkinChange}
         />
-        <SecondCol />
+        <SecondCol
+          up={up}
+          atp={atp}
+          rOS={rOS}
+          h2O2={h2O2}
+          dopaN={dopaN}
+          oxygen={oxygen}
+          calcium={calcium}
+          alphaSyn={alphaSyn}
+          apoptosis={apoptosis}
+          mtIntegrity={mtIntegrity}
+          fissionFusion={fissionFusion}
+          membranePotential={membranePotential}
+        />
       </div>
     );
   }

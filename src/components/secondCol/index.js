@@ -1,33 +1,35 @@
 import React from "react";
 
-import MembranePotential from "./MembranePotential";
-import AlphaSyn from "./AlphaSyn";
-import Apoptosis from "./Apoptosis";
-import ATP from "./ATP";
-import H2O2 from "./H2O2";
-import Calcium from "./Calcium";
-import DopaN from "./DopaN";
-import FissionFusion from "./FissionFusion";
-import ROS from "./ROS";
-import UP from "./UP";
-import Oxygen from "./Oxygen";
-import MTIntegrity from "./MTIntegrity";
+import EffectsBox from "./EffectsBox";
 
-const SecondCol = () => {
+const SecondCol = ({
+  up,
+  atp,
+  rOS,
+  h2O2,
+  dopaN,
+  oxygen,
+  calcium,
+  alphaSyn,
+  apoptosis,
+  mtIntegrity,
+  fissionFusion,
+  membranePotential,
+}) => {
   return (
     <div className="col-2 box-container" style={{ float: "right" }}>
-      <MembranePotential />
-      <AlphaSyn />
-      <Apoptosis />
-      <ATP />
-      <H2O2 />
-      <DopaN />
-      <Calcium />
-      <FissionFusion />
-      <MTIntegrity />
-      <ROS />
-      <Oxygen />
-      <UP />
+      <EffectsBox name="ΔΨm" status={membranePotential} />
+      <EffectsBox name="AlphaSyn" status={alphaSyn} />
+      <EffectsBox name="Apoptosis" status={apoptosis} />
+      <EffectsBox name="ATP" status={atp} />
+      <EffectsBox name="H2O2" status={h2O2} />
+      <EffectsBox name="DopaN" status={dopaN} />
+      <EffectsBox name="Calcium" status={calcium} />
+      <EffectsBox name="FissionFusion" status={fissionFusion} />
+      <EffectsBox name="MTIntegrity" status={mtIntegrity} />
+      <EffectsBox name="ROS" status={rOS} />
+      <EffectsBox name="Oxygen" status={oxygen} />
+      <EffectsBox name="UP" status={up} />
     </div>
   );
 };
