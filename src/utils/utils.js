@@ -12,6 +12,16 @@ export const Marks4Points = {
   0: "Normal",
   1: "OE",
 };
+export const MarksROS = {
+  0: "Normal",
+  1: "25%",
+  2: "40%",
+  3: "100%",
+  4: "110%",
+  5: "180%",
+  6: "250%",
+  7: "500%",
+};
 
 export const Marks4PointsOxidized = {
   "-2": "Oxidized",
@@ -34,6 +44,7 @@ export const initialState = {
   pink1: 0,
   parkin: 0,
   dopamine: 0,
+  rosSlider: 0,
 
   up: "",
   atp: "",

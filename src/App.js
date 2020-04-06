@@ -16,12 +16,12 @@ class App extends Component {
     };
   }
 
-  onPink1Change = (value) => {
-    this.setState({ pink1: value });
-
+  onPink1Change = (value, skipReset) => {
+    !skipReset && this.resetAll();
     switch (value[0]) {
       case -2:
         this.setState({
+          pink1: value,
           atp: "Decreases by 60%",
           atpClass: "dec",
           oxygen: "Decreases by 60%",
@@ -36,12 +36,15 @@ class App extends Component {
           rOSClass: "inc",
           calcium: "Efflux decreases",
           calciumClass: "dec",
+          alphaSyn: "Increases",
+          alphaSynClass: "inc",
         });
-        this.onParkinChange([-1]);
+        this.onParkinChange([-1], true);
         break;
 
       case -1:
         this.setState({
+          pink1: value,
           atp: "Decreases",
           atpClass: "dec",
           oxygen: "Decreases",
@@ -56,16 +59,20 @@ class App extends Component {
           calciumClass: "dec",
           membranePotential: "Decreases",
           membranePotentialClass: "dec",
+          alphaSyn: "Increases",
+          alphaSynClass: "inc",
         });
-        this.onParkinChange([-1]);
+        // this.onParkinChange([-1], true);
         break;
 
       default:
+        this.setState({ pink1: value });
         break;
     }
   };
 
-  onDJ1Change = (value) => {
+  onDJ1Change = (value, skipReset) => {
+    !skipReset && this.resetAll();
     switch (value[0]) {
       case -2:
         this.setState({
@@ -109,7 +116,8 @@ class App extends Component {
     }
   };
 
-  onDopChange = (value) => {
+  onDopChange = (value, skipReset) => {
+    !skipReset && this.resetAll();
     switch (value[0]) {
       case -2:
         this.setState({
@@ -143,7 +151,8 @@ class App extends Component {
     }
   };
 
-  onHtrA2Change = (value) => {
+  onHtrA2Change = (value, skipReset) => {
+    !skipReset && this.resetAll();
     switch (value[0]) {
       case -2:
         this.setState({
@@ -160,6 +169,7 @@ class App extends Component {
           upClass: "inc",
         });
         break;
+
       case -1:
         this.setState({
           htrA2: value,
@@ -178,12 +188,12 @@ class App extends Component {
 
       default:
         this.setState({ htrA2: value });
-
         break;
     }
   };
 
-  onParkinChange = (value) => {
+  onParkinChange = (value, skipReset) => {
+    !skipReset && this.resetAll();
     switch (value[0]) {
       case -2:
         this.setState({
@@ -227,7 +237,8 @@ class App extends Component {
     }
   };
 
-  onTrap1Change = (value) => {
+  onTrap1Change = (value, skipReset) => {
+    !skipReset && this.resetAll();
     switch (value[0]) {
       case -2:
         this.setState({
@@ -254,12 +265,12 @@ class App extends Component {
 
       default:
         this.setState({ trap1: value });
-
         break;
     }
   };
 
-  onUCHL1Change = (value) => {
+  onUCHL1Change = (value, skipReset) => {
+    !skipReset && this.resetAll();
     switch (value[0]) {
       case -1:
         this.setState({
@@ -275,17 +286,56 @@ class App extends Component {
 
       default:
         this.setState({ uchl1: value });
+        break;
+    }
+  };
+
+  onMPPChange = (value, skipReset) => {
+    !skipReset && this.resetAll();
+    switch (value[0]) {
+      case 1:
+        this.setState({
+          mPP: value,
+          atp: "Decreases (Impaired)",
+          atpClass: "dec",
+          rOS: "Increases by 40%",
+          rOSClass: "inc",
+          membranePotential: "Decreases",
+          membranePotentialClass: "dec",
+          calcium: "Increases (Intra-cellular)",
+          calciumClass: "inc",
+          h2O2: "Increases",
+          h2O2Class: "inc",
+          dopaN: "Decreases by 25%",
+          dopaNClass: "dec",
+          apoptosis: "Increases by 60%",
+          apoptosisClass: "inc",
+        });
+        this.onDopChange([1], true);
+        break;
+
+      default:
+        this.setState({ mPP: value });
+        break;
+    }
+  };
+
+  onRosChange = (value, skipReset) => {
+    !skipReset && this.resetAll();
+    // this.setState({ rosSlider: value });
+
+    switch (value[0]) {
+      case 1:
+        break;
+      default:
+        this.setState({ rosSlider: value });
 
         break;
     }
   };
 
-  onMPPChange = (value) => {
-    this.setState({ mPP: value });
-  };
-
   resetAll = () => {
-    this.setState(...initialState);
+    this.setState({ ...initialState });
   };
 
   render(props) {
@@ -298,6 +348,7 @@ class App extends Component {
       pink1,
       parkin,
       dopamine,
+      rosSlider,
 
       up,
       atp,
@@ -354,10 +405,12 @@ class App extends Component {
           oxygen={oxygen}
           calcium={calcium}
           alphaSyn={alphaSyn}
+          rosSlider={rosSlider}
           apoptosis={apoptosis}
           mtIntegrity={mtIntegrity}
           fissionFusion={fissionFusion}
           membranePotential={membranePotential}
+          onRosChange={this.onRosChange}
           upClass={upClass}
           atpClass={atpClass}
           rOSClass={rOSClass}

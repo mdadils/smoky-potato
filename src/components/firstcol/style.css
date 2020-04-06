@@ -37,9 +37,10 @@
 }
 
 .effects-box {
-  padding: 1em;
-  border: 2px solid;
+  width: 20em;
   margin: 1em;
+  padding: 1em 2em;
+  border: 2px solid;
   text-align: center;
   border-radius: 8px;
 }

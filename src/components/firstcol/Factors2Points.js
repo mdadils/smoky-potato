@@ -9,13 +9,14 @@ const Factors = ({ value, onChange, name }) => {
     <div className={`box p2 ${SliderStateClassMap[value]}`}>
       <span className="factor-name ">{name}</span>
       <Slider
-        marks={Marks2Points}
-        min={0}
-        max={1}
         range
+        max={1}
+        min={0}
+        included={true}
         value={[value]}
         onChange={onChange}
-        included={true}
+        marks={Marks2Points}
+        tooltipVisible={false}
       />
     </div>
   );

@@ -16,6 +16,7 @@ const Factors = ({ value, onChange, name }) => {
         included={true}
         onChange={onChange}
         marks={Marks4Points}
+        tooltipVisible={false}
       />
     </div>
   );
