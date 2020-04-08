@@ -1,19 +1,19 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
 
-import { MarksROS } from "../../utils/utils";
+import { MarksMembranePot } from "../../utils/utils";
 
-const EffectsBoxRos = ({ name, status, className, value, onChange }) => {
+const EffectsBoxMP = ({ name, status, className, value, onChange }) => {
   return (
-    <div className={`effects-box with-slider ros ${name} ${className}`}>
+    <div className={`effects-box with-slider mem-pot ${name} ${className}`}>
       <div>{name}</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={20}>
           <Slider
             range
-            min={0}
-            max={6}
+            min={-3}
+            max={1}
             tooltipVisible={false}
             value={[value]}
             included={true}
@@ -21,11 +21,13 @@ const EffectsBoxRos = ({ name, status, className, value, onChange }) => {
           />
         </Col>
         <Col span={4}>
-          <span className="slider-label">{!status && MarksROS[value]}</span>
+          <span className="slider-label">
+            {!status && MarksMembranePot[value]}
+          </span>
         </Col>
       </Row>
     </div>
   );
 };
 
-export default EffectsBoxRos;
+export default EffectsBoxMP;

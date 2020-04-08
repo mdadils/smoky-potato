@@ -20,7 +20,14 @@ export const MarksROS = {
   4: "110%",
   5: "180%",
   6: "250%",
-  7: "500%",
+};
+
+export const MarksMembranePot = {
+  "-3": "-60%",
+  "-2": "-50%",
+  "-1": "-45%",
+  0: "Normal",
+  1: "26%",
 };
 
 export const Marks4PointsOxidized = {
@@ -45,6 +52,9 @@ export const initialState = {
   parkin: 0,
   dopamine: 0,
   rosSlider: 0,
+  memPotSlider: 0,
+
+  mppStatus: "",
 
   up: "",
   atp: "",

@@ -322,14 +322,178 @@ class App extends Component {
 
   onRosChange = (value, skipReset) => {
     !skipReset && this.resetAll();
-    // this.setState({ rosSlider: value });
 
     switch (value[0]) {
+      case 0:
+        this.resetAll();
+
+        break;
       case 1:
+        this.setState({
+          mPP: [1],
+          rosSlider: value,
+          mppStatus: "Increases by 50%",
+        });
+        break;
+      case 2:
+        this.setState({
+          mPP: [1],
+          rosSlider: value,
+          mppStatus: "Increases by 60%",
+        });
+        break;
+      case 3:
+        this.setState({
+          mPP: [1],
+          rosSlider: value,
+          mppStatus: "Increases by 95%",
+          trap1: [-1],
+        });
+        break;
+      case 4:
+        this.setState({
+          mPP: [1],
+          rosSlider: value,
+          mppStatus: "Increases by 100%",
+          trap1: [-1],
+        });
+        break;
+      case 5:
+        this.setState({
+          mPP: [1],
+          dJ1: [-1],
+          pink1: [-1],
+          uchl1: [-1],
+          htrA2: [-1],
+          trap1: [-1],
+          parkin: [-1],
+          dopamine: [1],
+          rosSlider: value,
+
+          up: "Increases",
+          atp: "Decreases",
+          h2O2: "increases",
+          dopaN: "Decreases",
+          oxygen: "Decreases",
+          alphaSyn: "Increases",
+          apoptosis: "Increases",
+          fissionFusion: "Alter",
+          mtIntegrity: "Decreases",
+          calcium: "Decrease in efflux",
+          membranePotential: "Decreases",
+
+          upClass: "inc",
+          atpClass: "dec",
+          h2O2Class: "inc",
+          dopaNClass: "dec",
+          oxygenClass: "dec",
+          calciumClass: "dec",
+          alphaSynClass: "inc",
+          apoptosisClass: "inc",
+          mtIntegrityClass: "dec",
+          fissionFusionClass: "dec",
+          membranePotentialClass: "dec",
+          mppStatus: "Increases by 200%",
+        });
+        break;
+
+      case 6:
+        this.setState({
+          mPP: [1],
+          dJ1: [-1],
+          pink1: [-1],
+          htrA2: [-1],
+          uchl1: [-1],
+          trap1: [-1],
+          parkin: [-1],
+          dopamine: [1],
+          rosSlider: value,
+
+          up: "Increases",
+          atp: "Decreases",
+          h2O2: "increases",
+          dopaN: "Decreases",
+          oxygen: "Decreases",
+          alphaSyn: "Increases",
+          apoptosis: "Increases",
+          fissionFusion: "Alter",
+          mtIntegrity: "Decreases",
+          calcium: "Decrease in efflux",
+          membranePotential: "Decreases",
+
+          upClass: "inc",
+          atpClass: "dec",
+          h2O2Class: "inc",
+          dopaNClass: "dec",
+          oxygenClass: "dec",
+          calciumClass: "dec",
+          alphaSynClass: "inc",
+          apoptosisClass: "inc",
+          mtIntegrityClass: "dec",
+          fissionFusionClass: "dec",
+          membranePotentialClass: "dec",
+          mppStatus: "Increases by 500%",
+        });
         break;
       default:
         this.setState({ rosSlider: value });
+        break;
+    }
+  };
 
+  onMemPotChange = (value, skipReset) => {
+    !skipReset && this.resetAll();
+    this.setState({ memPotSlider: value });
+
+    switch (value[0]) {
+      case -3:
+        this.setState({
+          memPotSlider: value,
+          pink1: [-2],
+          dJ1: [-2],
+          trap1: [-2],
+          mPP: [1],
+          rOS: "Increases",
+          rOSClass: "inc",
+        });
+        break;
+      case -2:
+        this.setState({
+          memPotSlider: value,
+          pink1: [-2],
+          dJ1: [-2],
+          trap1: [-2],
+          mPP: [1],
+          rOS: "Increases",
+          rOSClass: "inc",
+        });
+        break;
+      case -1:
+        this.setState({
+          memPotSlider: value,
+          pink1: [-1],
+          dJ1: [-2],
+          trap1: [-2],
+          rOS: "Increases",
+          rOSClass: "inc",
+          mPP: [1],
+        });
+        break;
+      case 0:
+        this.setState({
+          memPotSlider: value,
+        });
+        break;
+      case 1:
+        this.setState({
+          memPotSlider: value,
+          rOS: "Increases",
+          rOSClass: "inc",
+          //   Show parkinson disease
+        });
+        break;
+
+      default:
         break;
     }
   };
@@ -348,7 +512,10 @@ class App extends Component {
       pink1,
       parkin,
       dopamine,
+
       rosSlider,
+      memPotSlider,
+      mppStatus,
 
       up,
       atp,
@@ -387,6 +554,7 @@ class App extends Component {
           pink1={pink1}
           parkin={parkin}
           dopamine={dopamine}
+          mppStatus={mppStatus}
           onDJ1Change={this.onDJ1Change}
           onDopChange={this.onDopChange}
           onMPPChange={this.onMPPChange}
@@ -408,9 +576,11 @@ class App extends Component {
           rosSlider={rosSlider}
           apoptosis={apoptosis}
           mtIntegrity={mtIntegrity}
+          memPotSlider={memPotSlider}
           fissionFusion={fissionFusion}
           membranePotential={membranePotential}
           onRosChange={this.onRosChange}
+          onMemPotChange={this.onMemPotChange}
           upClass={upClass}
           atpClass={atpClass}
           rOSClass={rOSClass}

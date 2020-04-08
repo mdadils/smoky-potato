@@ -1,6 +1,7 @@
 import React from "react";
 
 import EffectsBox from "./EffectsBox";
+import EffectsBoxMP from "./EffectsBoxMP";
 import EffectsBoxRos from "./EffectsBoxRos";
 
 const SecondCol = ({
@@ -15,9 +16,10 @@ const SecondCol = ({
   rosSlider,
   apoptosis,
   mtIntegrity,
+  memPotSlider,
   fissionFusion,
   membranePotential,
-
+  onMemPotChange,
   onRosChange,
 
   upClass,
@@ -35,10 +37,12 @@ const SecondCol = ({
 }) => {
   return (
     <div className="col-2 box-container" style={{ float: "right" }}>
-      <EffectsBox
+      <EffectsBoxMP
         name="ΔΨm"
         status={membranePotential}
+        value={memPotSlider}
         className={membranePotentialClass}
+        onChange={onMemPotChange}
       />
       <EffectsBox name="ATP" status={atp} className={atpClass} />
       <EffectsBoxRos

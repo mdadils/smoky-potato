@@ -4,10 +4,11 @@ import { Slider } from "antd";
 
 import { SliderStateClassMap, Marks2Points } from "../../utils/utils";
 
-const Factors = ({ value, onChange, name }) => {
+const Factors = ({ value, onChange, name, status }) => {
   return (
     <div className={`box p2 ${SliderStateClassMap[value]}`}>
       <span className="factor-name ">{name}</span>
+      <div className="status">{status}</div>
       <Slider
         range
         max={1}
