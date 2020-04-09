@@ -2,6 +2,7 @@ import React from "react";
 
 import EffectsBox from "./EffectsBox";
 import EffectsBoxMP from "./EffectsBoxMP";
+import EffectsBoxATP from "./EffectsBoxATP";
 import EffectsBoxRos from "./EffectsBoxRos";
 
 const SecondCol = ({
@@ -21,6 +22,8 @@ const SecondCol = ({
   membranePotential,
   onMemPotChange,
   onRosChange,
+  atpSlider,
+  onAtpSliderChange,
 
   upClass,
   atpClass,
@@ -44,7 +47,13 @@ const SecondCol = ({
         className={membranePotentialClass}
         onChange={onMemPotChange}
       />
-      <EffectsBox name="ATP" status={atp} className={atpClass} />
+      <EffectsBoxATP
+        name="ATP"
+        status={atp}
+        className={atpClass}
+        value={atpSlider}
+        onChange={onAtpSliderChange}
+      />
       <EffectsBoxRos
         name="ROS"
         status={rOS}

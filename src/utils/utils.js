@@ -22,12 +22,42 @@ export const MarksROS = {
   6: "250%",
 };
 
+export const MarksRosNoName = {
+  0: "",
+  1: "",
+  2: "",
+  3: "",
+  4: "",
+  5: "",
+  6: "",
+};
+
+export const MarksMembraneATP = {
+  "-2": "-60%",
+  "-1": "-42%",
+  0: "Normal",
+};
+
+export const MarksMembraneATPNoName = {
+  "-2": "",
+  "-1": "",
+  0: "",
+};
+
 export const MarksMembranePot = {
   "-3": "-60%",
   "-2": "-50%",
   "-1": "-45%",
   0: "Normal",
   1: "26%",
+};
+
+export const MarksMembranePotNoName = {
+  "-3": "",
+  "-2": "",
+  "-1": "",
+  0: "",
+  1: "",
 };
 
 export const Marks4PointsOxidized = {
@@ -51,10 +81,13 @@ export const initialState = {
   pink1: 0,
   parkin: 0,
   dopamine: 0,
+
+  atpSlider: 0,
   rosSlider: 0,
   memPotSlider: 0,
 
   mppStatus: "",
+  parkinStatus: "",
 
   up: "",
   atp: "",

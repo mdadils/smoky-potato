@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
 
-import { MarksMembranePot } from "../../utils/utils";
+import { MarksMembranePot, MarksMembranePotNoName } from "../../utils/utils";
 
 const EffectsBoxMP = ({ name, status, className, value, onChange }) => {
   return (
@@ -18,6 +18,7 @@ const EffectsBoxMP = ({ name, status, className, value, onChange }) => {
             value={[value]}
             included={true}
             onChange={onChange}
+            marks={MarksMembranePotNoName}
           />
         </Col>
         <Col span={4}>

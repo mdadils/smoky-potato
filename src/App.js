@@ -443,7 +443,6 @@ class App extends Component {
 
   onMemPotChange = (value, skipReset) => {
     !skipReset && this.resetAll();
-    this.setState({ memPotSlider: value });
 
     switch (value[0]) {
       case -3:
@@ -452,31 +451,83 @@ class App extends Component {
           pink1: [-2],
           dJ1: [-2],
           trap1: [-2],
+          parkin: [-1],
           mPP: [1],
           rOS: "Increases",
           rOSClass: "inc",
+          parkinStatus: "Less Phosphorylation",
+          atp: "Decreases (Impaired)",
+          atpClass: "dec",
+          alphaSyn: "Increases",
+          alphaSynClass: "inc",
+          calcium: "Increases",
+          calciumClass: "inc",
+          dopaN: "Decreases",
+          dopaNClass: "dec",
+          up: "Increases",
+          upClass: "inc",
+          oxygen: "Decreases",
+          oxygenClass: "dec",
+          fissionFusion: "Altered",
+          fissionFusionClass: "alter",
+          apoptosis: "Increases",
+          apoptosisClass: "inc",
         });
         break;
       case -2:
         this.setState({
           memPotSlider: value,
           pink1: [-2],
+          parkin: [-1],
           dJ1: [-2],
           trap1: [-2],
           mPP: [1],
           rOS: "Increases",
           rOSClass: "inc",
+          parkinStatus: "Less Phosphorylation",
+          atp: "Decreases by 60%",
+          atpClass: "dec",
+          alphaSyn: "Increases",
+          alphaSynClass: "inc",
+          calcium: "Increases",
+          calciumClass: "inc",
+          dopaN: "Decreases",
+          dopaNClass: "dec",
+          up: "Increases",
+          upClass: "inc",
+          oxygen: "Decreases by 60%",
+          oxygenClass: "dec",
+          fissionFusion: "Altered",
+          fissionFusionClass: "alter",
+          apoptosis: "Increases",
+          apoptosisClass: "inc",
         });
         break;
       case -1:
         this.setState({
           memPotSlider: value,
           pink1: [-1],
+          parkin: [-1],
           dJ1: [-2],
           trap1: [-2],
           rOS: "Increases",
           rOSClass: "inc",
           mPP: [1],
+          parkinStatus: "Less Phosphorylation",
+          atp: "Decreases by 42%",
+          atpClass: "dec",
+          alphaSyn: "Increases",
+          alphaSynClass: "inc",
+          calcium: "Increases",
+          calciumClass: "inc",
+          dopaN: "Decreases",
+          dopaNClass: "dec",
+          up: "Increases",
+          upClass: "inc",
+          oxygen: "Decreases",
+          oxygenClass: "dec",
+          apoptosis: "Increases",
+          apoptosisClass: "inc",
         });
         break;
       case 0:
@@ -492,10 +543,15 @@ class App extends Component {
           //   Show parkinson disease
         });
         break;
-
       default:
+        this.setState({ memPotSlider: value });
         break;
     }
+  };
+
+  onAtpSliderChange = (value, skipReset) => {
+    !skipReset && this.resetAll();
+    this.setState({ atpSlider: value });
   };
 
   resetAll = () => {
@@ -515,7 +571,10 @@ class App extends Component {
 
       rosSlider,
       memPotSlider,
+      atpSlider,
+
       mppStatus,
+      parkinStatus,
 
       up,
       atp,
@@ -555,6 +614,7 @@ class App extends Component {
           parkin={parkin}
           dopamine={dopamine}
           mppStatus={mppStatus}
+          parkinStatus={parkinStatus}
           onDJ1Change={this.onDJ1Change}
           onDopChange={this.onDopChange}
           onMPPChange={this.onMPPChange}
@@ -575,10 +635,12 @@ class App extends Component {
           alphaSyn={alphaSyn}
           rosSlider={rosSlider}
           apoptosis={apoptosis}
+          atpSlider={atpSlider}
           mtIntegrity={mtIntegrity}
           memPotSlider={memPotSlider}
           fissionFusion={fissionFusion}
           membranePotential={membranePotential}
+          onAtpSliderChange={this.onAtpSliderChange}
           onRosChange={this.onRosChange}
           onMemPotChange={this.onMemPotChange}
           upClass={upClass}

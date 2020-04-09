@@ -19,6 +19,7 @@ const FirstColumn = ({
   onDJ1Change,
   onDopChange,
   onMPPChange,
+  parkinStatus,
   onPink1Change,
   onTrap1Change,
   onHtrA2Change,
@@ -28,7 +29,12 @@ const FirstColumn = ({
   return (
     <div className="col-1 box-container">
       <Factors4Points name="Pink1" onChange={onPink1Change} value={pink1} />
-      <Factors4Points name="Parkin" onChange={onParkinChange} value={parkin} />
+      <Factors4Points
+        name="Parkin"
+        onChange={onParkinChange}
+        value={parkin}
+        status={parkinStatus}
+      />
       <Factors4Points name="DJ1" onChange={onDJ1Change} value={dJ1} />
       <Factors4Points name="Trap1" onChange={onTrap1Change} value={trap1} />
       <Factors4Points name="HtrA2" onChange={onHtrA2Change} value={htrA2} />
