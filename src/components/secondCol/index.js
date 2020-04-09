@@ -4,6 +4,8 @@ import EffectsBox from "./EffectsBox";
 import EffectsBoxMP from "./EffectsBoxMP";
 import EffectsBoxATP from "./EffectsBoxATP";
 import EffectsBoxRos from "./EffectsBoxRos";
+import EffectsBoxAlphaSyn from "./EffectsBoxAlphaSyn";
+import EffectsBoxApoptosis from "./EffectsBoxApoptosis";
 
 const SecondCol = ({
   up,
@@ -16,13 +18,18 @@ const SecondCol = ({
   alphaSyn,
   rosSlider,
   apoptosis,
+  apopSlider,
   mtIntegrity,
   memPotSlider,
   fissionFusion,
+  alphaSynSlider,
   membranePotential,
+
+  onApopSliderChange,
   onMemPotChange,
   onRosChange,
   atpSlider,
+  onAlphaSChange,
   onAtpSliderChange,
 
   upClass,
@@ -62,12 +69,20 @@ const SecondCol = ({
         onChange={onRosChange}
       />
 
-      <EffectsBox
+      <EffectsBoxApoptosis
         name="Apoptosis"
         status={apoptosis}
+        value={apopSlider}
+        onChange={onApopSliderChange}
         className={apoptosisClass}
       />
-      <EffectsBox name="AlphaSyn" status={alphaSyn} className={alphaSynClass} />
+      <EffectsBoxAlphaSyn
+        name="AlphaSyn"
+        status={alphaSyn}
+        value={alphaSynSlider}
+        onChange={onAlphaSChange}
+        className={alphaSynClass}
+      />
       <EffectsBox name="Calcium" status={calcium} className={calciumClass} />
       <EffectsBox name="DopaN" status={dopaN} className={dopaNClass} />
       <EffectsBox name="H2O2" status={h2O2} className={h2O2Class} />

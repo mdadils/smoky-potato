@@ -18,12 +18,14 @@ const FirstColumn = ({
   mppStatus,
   onDJ1Change,
   onDopChange,
+  htrA2Status,
   onMPPChange,
   parkinStatus,
   onPink1Change,
   onTrap1Change,
   onHtrA2Change,
   onUCHL1Change,
+  dopamineStatus,
   onParkinChange,
 }) => {
   return (
@@ -37,12 +39,18 @@ const FirstColumn = ({
       />
       <Factors4Points name="DJ1" onChange={onDJ1Change} value={dJ1} />
       <Factors4Points name="Trap1" onChange={onTrap1Change} value={trap1} />
-      <Factors4Points name="HtrA2" onChange={onHtrA2Change} value={htrA2} />
+      <Factors4Points
+        name="HtrA2"
+        onChange={onHtrA2Change}
+        value={htrA2}
+        status={htrA2Status}
+      />
       <Factors4Points name="Uchl1" onChange={onUCHL1Change} value={uchl1} />
       <Factors4PointsOX
         name="Dopamine"
         onChange={onDopChange}
         value={dopamine}
+        status={dopamineStatus}
       />
       <Factors2Points
         name="mPP"

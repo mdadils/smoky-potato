@@ -37,6 +37,21 @@ export const MarksMembraneATP = {
   "-1": "-42%",
   0: "Normal",
 };
+export const MarksMembraneAlphaSyn = {
+  "-1": "Very Low",
+  0: "Normal",
+  1: "Aggregation",
+};
+
+export const MarksMembraneApop = {
+  0: "Normal",
+  1: "Increased",
+};
+
+export const MarksMembraneApopNoName = {
+  0: "",
+  1: "",
+};
 
 export const MarksMembraneATPNoName = {
   "-2": "",
@@ -84,9 +99,13 @@ export const initialState = {
 
   atpSlider: 0,
   rosSlider: 0,
+  apopSlider: 0,
   memPotSlider: 0,
+  alphaSynSlider: 0,
 
+  dopamineStatus: "",
   mppStatus: "",
+  htrA2Status: "",
   parkinStatus: "",
 
   up: "",

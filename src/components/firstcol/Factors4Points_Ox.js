@@ -4,10 +4,11 @@ import { Slider } from "antd";
 
 import { SliderStateClassMap, Marks4PointsOxidized } from "../../utils/utils";
 
-const Factors = ({ value, onChange, name }) => {
+const Factors = ({ value, onChange, name, status }) => {
   return (
     <div className={`box p4 oxidized ${SliderStateClassMap[value]}`}>
-      <span className="factor-name">{name}</span>
+      <div className="factor-name p5">{name}</div>
+      <div className="status">{status}</div>
       <Slider
         range
         max={1}
