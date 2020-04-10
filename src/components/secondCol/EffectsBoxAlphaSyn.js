@@ -1,10 +1,7 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
 
-import {
-  MarksMembraneAlphaSyn,
-  MarksMembraneATPNoName,
-} from "../../utils/utils";
+import { MarksMembraneAlphaSyn, MarksATPNoName } from "../../utils/utils";
 
 const EffectsBoxAlphaSyn = ({ name, status, className, value, onChange }) => {
   return (
@@ -21,7 +18,7 @@ const EffectsBoxAlphaSyn = ({ name, status, className, value, onChange }) => {
             value={[value]}
             included={true}
             onChange={onChange}
-            marks={MarksMembraneATPNoName}
+            marks={MarksATPNoName}
           />
         </Col>
         <Col span={8}>

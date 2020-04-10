@@ -32,7 +32,7 @@ export const MarksRosNoName = {
   6: "",
 };
 
-export const MarksMembraneATP = {
+export const MarksATP = {
   "-2": "-60%",
   "-1": "-42%",
   0: "Normal",
@@ -53,7 +53,7 @@ export const MarksMembraneApopNoName = {
   1: "",
 };
 
-export const MarksMembraneATPNoName = {
+export const MarksATPNoName = {
   "-2": "",
   "-1": "",
   0: "",
@@ -102,6 +102,7 @@ export const initialState = {
   apopSlider: 0,
   memPotSlider: 0,
   alphaSynSlider: 0,
+  calciumSlider: 0,
 
   dopamineStatus: "",
   mppStatus: "",
