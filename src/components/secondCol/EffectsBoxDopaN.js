@@ -1,32 +1,32 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
 
-import { MarksCalcium, MarksApopNoName } from "../../utils/utils";
+import { MarksDopaN, MarksDopaNNoName } from "../../utils/utils";
 
-const EffectsBoxCalcium = ({ name, status, className, value, onChange }) => {
+const EffectsBoxDopaN = ({ name, status, className, value, onChange }) => {
   return (
-    <div className={`effects-box with-slider calcium ${name} ${className}`}>
+    <div className={`effects-box with-slider dopaN ${name} ${className}`}>
       <div>{name}</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={14}>
           <Slider
             range
-            min={0}
-            max={1}
+            min={-1}
+            max={0}
             tooltipVisible={false}
             value={[value]}
             included={true}
             onChange={onChange}
-            marks={MarksApopNoName}
+            marks={MarksDopaNNoName}
           />
         </Col>
         <Col span={10}>
-          <span className="slider-label">{!status && MarksCalcium[value]}</span>
+          <span className="slider-label">{!status && MarksDopaN[value]}</span>
         </Col>
       </Row>
     </div>
   );
 };
 
-export default EffectsBoxCalcium;
+export default EffectsBoxDopaN;

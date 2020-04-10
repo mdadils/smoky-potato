@@ -46,3 +46,11 @@
   display: table;
   clear: both;
 }
+
+.effects-box.dec {
+  border-color: rebeccapurple;
+}
+
+.effects-box.inc {
+  border-color: seagreen;
+}

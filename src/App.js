@@ -704,8 +704,6 @@ class App extends Component {
           dopaNClass: "dec",
           up: "Increases",
           upClass: "inc",
-          alphaSyn: "Increases",
-          alphaSynClass: "inc",
           fissionFusion: "Altered",
           fissionFusionClass: "alter",
         });
@@ -715,6 +713,55 @@ class App extends Component {
         this.setState({ alphaSynSlider: value });
         break;
     }
+  };
+
+  onCalciumSliderChange = (value, skipReset) => {
+    !skipReset && this.resetAll();
+
+    switch (value[0]) {
+      case 1:
+        this.setState({
+          calciumSlider: value,
+          pink1: [-1],
+          dJ1: [-1],
+          mPP: [1],
+          dopamine: [-2],
+          alphaSynSlider: [1],
+          atpSlider: [-1],
+
+          membranePotential: "Decreases",
+          membranePotentialClass: "dec",
+          oxygen: "Decreases",
+          oxygenClass: "dec",
+          rOS: "Increases",
+          rOSClass: "inc",
+          h2O2: "Increases",
+          h2O2Class: "inc",
+          dopaN: "Decreases",
+          dopaNClass: "dec",
+          atp: "Decreases",
+          atpClass: "dec",
+        });
+        break;
+
+      default:
+        this.setState({ calciumSlider: value });
+
+        break;
+    }
+  };
+
+  onDopaNChange = (value, skipReset) => {
+    !skipReset && this.resetAll();
+    switch (value[0]) {
+      case 1:
+        break;
+
+      default:
+        break;
+    }
+
+    this.setState({ dopaNSlider: value });
   };
 
   resetAll = () => {
@@ -732,10 +779,12 @@ class App extends Component {
       parkin,
       dopamine,
 
+      calciumSlider,
       rosSlider,
       memPotSlider,
       atpSlider,
       apopSlider,
+      dopaNSlider,
       alphaSynSlider,
 
       mppStatus,
@@ -807,15 +856,19 @@ class App extends Component {
           atpSlider={atpSlider}
           apopSlider={apopSlider}
           mtIntegrity={mtIntegrity}
+          dopaNSlider={dopaNSlider}
           memPotSlider={memPotSlider}
+          calciumSlider={calciumSlider}
           fissionFusion={fissionFusion}
           alphaSynSlider={alphaSynSlider}
           membranePotential={membranePotential}
+          onDopaNChange={this.onDopaNChange}
           onRosChange={this.onRosChange}
           onMemPotChange={this.onMemPotChange}
           onAlphaSChange={this.onAlphaSChange}
           onAtpSliderChange={this.onAtpSliderChange}
           onApopSliderChange={this.onApopSliderChange}
+          onCalciumSliderChange={this.onCalciumSliderChange}
           upClass={upClass}
           atpClass={atpClass}
           rOSClass={rOSClass}

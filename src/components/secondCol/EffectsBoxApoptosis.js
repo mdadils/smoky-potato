@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
 
-import { MarksMembraneApop, MarksMembraneApopNoName } from "../../utils/utils";
+import { MarksApop, MarksApopNoName } from "../../utils/utils";
 
 const EffectsBoxApoptosis = ({ name, status, className, value, onChange }) => {
   return (
@@ -18,13 +18,11 @@ const EffectsBoxApoptosis = ({ name, status, className, value, onChange }) => {
             value={[value]}
             included={true}
             onChange={onChange}
-            marks={MarksMembraneApopNoName}
+            marks={MarksApopNoName}
           />
         </Col>
         <Col span={7} offset={1}>
-          <span className="slider-label">
-            {!status && MarksMembraneApop[value]}
-          </span>
+          <span className="slider-label">{!status && MarksApop[value]}</span>
         </Col>
       </Row>
     </div>
