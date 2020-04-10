@@ -111,6 +111,7 @@ export const initialState = {
   parkin: 0,
   dopamine: 0,
 
+  h2O2Slider: 0,
   atpSlider: 0,
   rosSlider: 0,
   apopSlider: 0,
@@ -119,6 +120,7 @@ export const initialState = {
   calciumSlider: 0,
   dopaNSlider: 0,
 
+  dJ1Status: "",
   dopamineStatus: "",
   mppStatus: "",
   htrA2Status: "",

@@ -19,6 +19,7 @@ const FirstColumn = ({
   onDJ1Change,
   onDopChange,
   htrA2Status,
+  dJ1Status,
   onMPPChange,
   parkinStatus,
   onPink1Change,
@@ -37,7 +38,12 @@ const FirstColumn = ({
         value={parkin}
         status={parkinStatus}
       />
-      <Factors4Points name="DJ1" onChange={onDJ1Change} value={dJ1} />
+      <Factors4Points
+        name="DJ1"
+        onChange={onDJ1Change}
+        value={dJ1}
+        status={dJ1Status}
+      />
       <Factors4Points name="Trap1" onChange={onTrap1Change} value={trap1} />
       <Factors4Points
         name="HtrA2"

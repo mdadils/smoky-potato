@@ -22,6 +22,7 @@ class App extends Component {
       case -2:
         this.setState({
           pink1: value,
+          atpSlider: [-2],
           atp: "Decreases by 60%",
           atpClass: "dec",
           oxygen: "Decreases by 60%",
@@ -39,7 +40,7 @@ class App extends Component {
           alphaSyn: "Increases",
           alphaSynClass: "inc",
         });
-        this.onParkinChange([-1], true);
+        // this.onParkinChange([-1], true);
         break;
 
       case -1:
@@ -754,14 +755,78 @@ class App extends Component {
   onDopaNChange = (value, skipReset) => {
     !skipReset && this.resetAll();
     switch (value[0]) {
-      case 1:
+      case -1:
+        this.setState({
+          dopaNSlider: value,
+          parkin: [-2],
+          uchl1: [-2],
+          htrA2: [-1],
+          mPP: [1],
+          memPotSlider: [-2],
+          membranePotential: "Decreases",
+          atp: "Decreases",
+          atpClass: "dec",
+          atpSlider: [-2],
+          alphaSynClass: "inc",
+          alphaSyn: "Increased Aggregation",
+          alphaSynSlider: [1],
+          rosSlider: [3],
+          rOS: "Increases",
+          rOSClass: "inc",
+          upClass: "Increases",
+          up: "inc",
+          fissionFusionClass: "alter",
+          fissionFusion: "Altered",
+          calcium: "Increases",
+          calciumClass: "inc",
+          calciumSlider: [1],
+        });
         break;
 
       default:
+        this.setState({ dopaNSlider: value });
         break;
     }
+  };
 
-    this.setState({ dopaNSlider: value });
+  onH2O2SliderChange = (value, skipReset) => {
+    !skipReset && this.resetAll();
+    switch (value[0]) {
+      case 1:
+        this.setState({
+          h2O2Slider: value,
+          dJ1: [-2],
+          dJ1Status: "(When H2O2 increased by 100%)",
+          dopamine: [-2],
+          mPP: [1],
+
+          calcium: "Increases",
+          calciumClass: "inc",
+          membranePotential: "Decreases",
+          membranePotentialClass: "dec",
+          //   oxygen: "Decreases",
+          //   oxygenClass: "dec",
+          rOS: "Increases",
+          rOSClass: "inc",
+          dopaN: "Decreases",
+          dopaNClass: "dec",
+          uchl1: [-1],
+          parkin: [-1],
+          alphaSyn: "Increases",
+          alphaSynSlider: [1],
+          alphaSynClass: "dec",
+          apoptosisClass: "inc",
+          apoptosis: "Increases",
+          apopSlider: [1],
+        });
+
+        break;
+
+      default:
+        this.setState({ h2O2Slider: value });
+
+        break;
+    }
   };
 
   resetAll = () => {
@@ -780,6 +845,7 @@ class App extends Component {
       dopamine,
 
       calciumSlider,
+      h2O2Slider,
       rosSlider,
       memPotSlider,
       atpSlider,
@@ -788,6 +854,7 @@ class App extends Component {
       alphaSynSlider,
 
       mppStatus,
+      dJ1Status,
       parkinStatus,
       htrA2Status,
       dopamineStatus,
@@ -829,6 +896,7 @@ class App extends Component {
           pink1={pink1}
           parkin={parkin}
           dopamine={dopamine}
+          dJ1Status={dJ1Status}
           mppStatus={mppStatus}
           htrA2Status={htrA2Status}
           parkinStatus={parkinStatus}
@@ -861,6 +929,7 @@ class App extends Component {
           calciumSlider={calciumSlider}
           fissionFusion={fissionFusion}
           alphaSynSlider={alphaSynSlider}
+          h2O2Slider={h2O2Slider}
           membranePotential={membranePotential}
           onDopaNChange={this.onDopaNChange}
           onRosChange={this.onRosChange}
@@ -868,6 +937,7 @@ class App extends Component {
           onAlphaSChange={this.onAlphaSChange}
           onAtpSliderChange={this.onAtpSliderChange}
           onApopSliderChange={this.onApopSliderChange}
+          onH2O2SliderChange={this.onH2O2SliderChange}
           onCalciumSliderChange={this.onCalciumSliderChange}
           upClass={upClass}
           atpClass={atpClass}
