@@ -106,6 +106,26 @@ export const MarksPTP = {
   1: "Pathological",
 };
 
+export const MarksC1 = {
+  "-6": "-70%",
+  "-5": "-63%",
+  "-4": "-50%",
+  "-3": "-41%",
+  "-2": "-36%",
+  "-1": "-25%",
+  "0": "Normal",
+};
+
+export const MarksC1NoName = {
+  "-6": "",
+  "-5": "",
+  "-4": "",
+  "-3": "",
+  "-2": "",
+  "-1": "",
+  "0": "",
+};
+
 export const initialState = {
   dJ1: 0,
   mPP: 0,
@@ -116,6 +136,7 @@ export const initialState = {
   parkin: 0,
   dopamine: 0,
 
+  c1Slider: 0,
   h2O2Slider: 0,
   atpSlider: 0,
   rosSlider: 0,
@@ -135,6 +156,7 @@ export const initialState = {
   htrA2Status: "",
   parkinStatus: "",
 
+  c1: "",
   ptp: "",
   up: "",
   atp: "",
@@ -149,6 +171,7 @@ export const initialState = {
   fissionFusion: "",
   membranePotential: "",
 
+  c1Class: "",
   upClass: "",
   ptpClass: "",
   atpClass: "",

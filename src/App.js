@@ -5,6 +5,7 @@ import "./App.css";
 
 import FirstColumn from "./components/firstcol";
 import SecondCol from "./components/secondCol";
+import C1 from "./components/Complex1";
 
 import { initialState } from "./utils/utils";
 
@@ -1076,6 +1077,64 @@ class App extends Component {
     }
   };
 
+  onC1Change = (value, skipReset) => {
+    !skipReset && this.resetAll();
+    switch (value[0]) {
+      case -6:
+        this.setState({
+          c1Slider: value,
+          dJ1: [-2],
+          pink1: [-2],
+          parkin: [-2],
+          mPP: [1],
+          mppStatus: "Inhibition for non-synaptic mitochondria",
+        });
+        break;
+
+      case -5:
+        this.setState({
+          c1Slider: value,
+          parkin: [-2],
+          pink1: [-2],
+        });
+        break;
+
+      case -4:
+        this.setState({
+          c1Slider: value,
+          pink1: [-2],
+        });
+        break;
+
+      case -3:
+        this.setState({
+          c1Slider: value,
+          c1: "41% inhibition is found in frontal cortex of a PD patient",
+        });
+        break;
+
+      case -2:
+        this.setState({
+          c1Slider: value,
+          c1: "36% inhibition is found in Substantia Nigra of a PD patient",
+        });
+        break;
+
+      case -1:
+        this.setState({
+          c1Slider: value,
+          c1: "25% inhibition is found in Platelet of a PD patient",
+          mPP: [1],
+          mppStatus: "Inhibition for synaptic mitochondria",
+        });
+        break;
+
+      default:
+        this.setState({ c1Slider: value });
+        break;
+    }
+  };
+
   resetAll = () => {
     this.setState({ ...initialState });
   };
@@ -1091,18 +1150,19 @@ class App extends Component {
       parkin,
       dopamine,
 
-      calciumSlider,
-      fissionFusionSlider,
-      h2O2Slider,
-      rosSlider,
-      memPotSlider,
+      c1Slider,
       uPSlider,
+      rosSlider,
       atpSlider,
-      apopSlider,
       ptpSlider,
+      h2O2Slider,
+      apopSlider,
       dopaNSlider,
-      alphaSynSlider,
+      memPotSlider,
       oxygenSlider,
+      calciumSlider,
+      alphaSynSlider,
+      fissionFusionSlider,
 
       mppStatus,
       dJ1Status,
@@ -1110,6 +1170,7 @@ class App extends Component {
       htrA2Status,
       dopamineStatus,
 
+      c1,
       up,
       atp,
       ptp,
@@ -1124,6 +1185,7 @@ class App extends Component {
       fissionFusion,
       membranePotential,
 
+      c1Class,
       upClass,
       ptpClass,
       atpClass,
@@ -1139,7 +1201,7 @@ class App extends Component {
       membranePotentialClass,
     } = this.state;
     return (
-      <div className="app-container">
+      <div className="app-container clear">
         <FirstColumn
           dJ1={dJ1}
           mPP={mPP}
@@ -1214,6 +1276,13 @@ class App extends Component {
           mtIntegrityClass={mtIntegrityClass}
           fissionFusionClass={fissionFusionClass}
           membranePotentialClass={membranePotentialClass}
+        />
+        <C1
+          name="Complex 1"
+          className={c1Class}
+          status={c1}
+          value={c1Slider}
+          onChange={this.onC1Change}
         />
       </div>
     );

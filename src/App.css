@@ -41,7 +41,7 @@
   padding: 1em;
 }
 
-.app-container::after {
+.clear::after {
   content: "";
   display: table;
   clear: both;
@@ -53,4 +53,21 @@
 
 .effects-box.inc {
   border-color: seagreen;
+}
+
+.centered {
+  top: 50%;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-50%, -50%);
+}
+
+.c1 {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-50%, 0);
 }
