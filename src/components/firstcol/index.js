@@ -31,9 +31,9 @@ const FirstColumn = ({
 }) => {
   return (
     <div className="col-1 box-container">
-      <Factors4Points name="Pink1" onChange={onPink1Change} value={pink1} />
+      <Factors4Points name="PINK1" onChange={onPink1Change} value={pink1} />
       <Factors4Points
-        name="Parkin"
+        name="PARKIN"
         onChange={onParkinChange}
         value={parkin}
         status={parkinStatus}
@@ -44,14 +44,14 @@ const FirstColumn = ({
         value={dJ1}
         status={dJ1Status}
       />
-      <Factors4Points name="Trap1" onChange={onTrap1Change} value={trap1} />
+      <Factors4Points name="TRAP1" onChange={onTrap1Change} value={trap1} />
       <Factors4Points
-        name="HtrA2"
+        name="HTRA2"
         onChange={onHtrA2Change}
         value={htrA2}
         status={htrA2Status}
       />
-      <Factors4Points name="Uchl1" onChange={onUCHL1Change} value={uchl1} />
+      <Factors4Points name="UCHL1" onChange={onUCHL1Change} value={uchl1} />
       <Factors4PointsOX
         name="Dopamine"
         onChange={onDopChange}
@@ -59,7 +59,7 @@ const FirstColumn = ({
         status={dopamineStatus}
       />
       <Factors2Points
-        name="mPP"
+        name="MPP⁺"
         onChange={onMPPChange}
         value={mPP}
         status={mppStatus}

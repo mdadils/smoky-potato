@@ -6,7 +6,7 @@ import { MarksCalcium, MarksApopNoName } from "../../utils/utils";
 const EffectsBoxCalcium = ({ name, status, className, value, onChange }) => {
   return (
     <div className={`effects-box with-slider calcium ${name} ${className}`}>
-      <div>{name}</div>
+      <div className="name">{name}</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={14}>

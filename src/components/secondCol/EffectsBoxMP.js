@@ -6,7 +6,7 @@ import { MarksMembranePot, MarksMembranePotNoName } from "../../utils/utils";
 const EffectsBoxMP = ({ name, status, className, value, onChange }) => {
   return (
     <div className={`effects-box with-slider mem-pot ${name} ${className}`}>
-      <div>{name}</div>
+      <div className="name">{name}</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={20}>

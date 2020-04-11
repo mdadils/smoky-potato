@@ -94,7 +94,7 @@ const SecondCol = ({
       />
 
       <EffectsBoxAlphaSyn
-        name="AlphaSyn"
+        name="α-Synuclein"
         status={alphaSyn}
         value={alphaSynSlider}
         onChange={onAlphaSChange}
@@ -115,28 +115,28 @@ const SecondCol = ({
         className={apoptosisClass}
       />
       <EffectsBoxDopaN
-        name="DopaN"
+        name="Dopaminergic Neuron"
         status={dopaN}
         className={dopaNClass}
         value={dopaNSlider}
         onChange={onDopaNChange}
       />
       <EffectsBoxH2O2
-        name="H2O2"
+        name="H₂O₂"
         status={h2O2}
         className={h2O2Class}
         value={h2O2Slider}
         onChange={onH2O2SliderChange}
       />
       <EffectsBoxOxygen
-        name="Oxygen"
+        name="Oxygen Consumption"
         status={oxygen}
         className={oxygenClass}
         value={oxygenSlider}
         onChange={onOxygenSliderChange}
       />
       <EffectsBoxUP
-        name="UP"
+        name="Unfolded Protein"
         onChange={onUPSliderChange}
         status={up}
         className={upClass}
@@ -150,14 +150,14 @@ const SecondCol = ({
         value={ptpSlider}
       />
       <EffectsBoxFissionFusion
-        name="FissionFusion"
+        name="Fission-Fusion"
         onChange={onFissionFusionChange}
         status={fissionFusion}
         className={fissionFusionClass}
         value={fissionFusionSlider}
       />
       <EffectsBox
-        name="MTIntegrity"
+        name="Mitochondrial Integrity"
         status={mtIntegrity}
         className={mtIntegrityClass}
       />

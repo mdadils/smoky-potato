@@ -6,7 +6,7 @@ import { MarksC1, MarksC1NoName } from "../../utils/utils";
 const Complex1 = ({ name, status, className, value, onChange }) => {
   return (
     <div className={`c1 box with-slider effects-box ${name} ${className}`}>
-      <div>{name}</div>
+      <div className="name">{name}</div>
       <div className="status">{status}</div>
       <Row gutter={16}>
         <Col span={20}>

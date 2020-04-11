@@ -6,7 +6,7 @@ import { MarksROS, MarksRosNoName } from "../../utils/utils";
 const EffectsBoxRos = ({ name, status, className, value, onChange }) => {
   return (
     <div className={`effects-box with-slider ros ${name} ${className}`}>
-      <div>{name}</div>
+      <div className="name">{name}</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={20}>

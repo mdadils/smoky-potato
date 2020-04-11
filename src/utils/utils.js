@@ -10,7 +10,6 @@ export const Marks4Points = {
   "-2": "Mutate",
   "-1": "Low",
   0: "Normal",
-  1: "OE",
 };
 export const MarksROS = {
   0: "Normal",

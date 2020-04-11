@@ -6,7 +6,7 @@ import { MarksPTP, MarksApopNoName } from "../../utils/utils";
 const EffectsBoxPTPore = ({ name, status, className, value, onChange }) => {
   return (
     <div className={`effects-box with-slider ptp ${name} ${className}`}>
-      <div>{name}</div>
+      <div className="name">{name}</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={16}>

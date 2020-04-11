@@ -11,7 +11,7 @@ const Factors = ({ value, onChange, name, status }) => {
       <div className="status">{status}</div>
       <Slider
         range
-        max={1}
+        max={0}
         min={-2}
         value={[value]}
         included={true}

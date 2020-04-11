@@ -1355,7 +1355,7 @@ class App extends Component {
           membranePotentialClass={membranePotentialClass}
         />
         <C1
-          name="Complex 1"
+          name="Complex-1 Activity"
           className={c1Class}
           status={c1}
           value={c1Slider}
