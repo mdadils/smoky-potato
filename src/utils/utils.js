@@ -101,6 +101,11 @@ export const Marks2Points = {
   1: "Present",
 };
 
+export const MarksPTP = {
+  0: "Normal",
+  1: "Pathological",
+};
+
 export const initialState = {
   dJ1: 0,
   mPP: 0,
@@ -117,6 +122,7 @@ export const initialState = {
   apopSlider: 0,
   memPotSlider: 0,
   alphaSynSlider: 0,
+  ptpSlider: 0,
   calciumSlider: 0,
   dopaNSlider: 0,
   oxygenSlider: 0,
@@ -129,6 +135,7 @@ export const initialState = {
   htrA2Status: "",
   parkinStatus: "",
 
+  ptp: "",
   up: "",
   atp: "",
   rOS: "",
@@ -143,6 +150,7 @@ export const initialState = {
   membranePotential: "",
 
   upClass: "",
+  ptpClass: "",
   atpClass: "",
   rOSClass: "",
   h2O2Class: "",

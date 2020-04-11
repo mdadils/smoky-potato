@@ -12,12 +12,14 @@ import EffectsBoxH2O2 from "./EffectsBoxH2O2";
 import EffectsBoxOxygen from "./EffectsBoxOxygen";
 import EffectsBoxUP from "./EffectsBoxUP";
 import EffectsBoxFissionFusion from "./EffectsBoxFissionFusion";
+import EffectsBoxPTPore from "./EffectsBoxPTPore";
 
 const SecondCol = ({
   up,
   atp,
   rOS,
   h2O2,
+  ptp,
   dopaN,
   oxygen,
   calcium,
@@ -32,6 +34,7 @@ const SecondCol = ({
   h2O2Slider,
   fissionFusionSlider,
   oxygenSlider,
+  ptpSlider,
   calciumSlider,
 
   fissionFusion,
@@ -41,6 +44,7 @@ const SecondCol = ({
   onH2O2SliderChange,
   onUPSliderChange,
   onDopaNChange,
+  onPTPChange,
   onApopSliderChange,
   onCalciumSliderChange,
   onOxygenSliderChange,
@@ -60,6 +64,7 @@ const SecondCol = ({
   calciumClass,
   alphaSynClass,
   apoptosisClass,
+  ptpClass,
   mtIntegrityClass,
   fissionFusionClass,
   membranePotentialClass,
@@ -88,13 +93,6 @@ const SecondCol = ({
         onChange={onRosChange}
       />
 
-      <EffectsBoxApoptosis
-        name="Apoptosis"
-        status={apoptosis}
-        value={apopSlider}
-        onChange={onApopSliderChange}
-        className={apoptosisClass}
-      />
       <EffectsBoxAlphaSyn
         name="AlphaSyn"
         status={alphaSyn}
@@ -108,6 +106,13 @@ const SecondCol = ({
         className={calciumClass}
         onChange={onCalciumSliderChange}
         value={calciumSlider}
+      />
+      <EffectsBoxApoptosis
+        name="Apoptosis"
+        status={apoptosis}
+        value={apopSlider}
+        onChange={onApopSliderChange}
+        className={apoptosisClass}
       />
       <EffectsBoxDopaN
         name="DopaN"
@@ -137,7 +142,13 @@ const SecondCol = ({
         className={upClass}
         value={uPSlider}
       />
-
+      <EffectsBoxPTPore
+        name="PTP Opening"
+        onChange={onPTPChange}
+        status={ptp}
+        className={ptpClass}
+        value={ptpSlider}
+      />
       <EffectsBoxFissionFusion
         name="FissionFusion"
         onChange={onFissionFusionChange}

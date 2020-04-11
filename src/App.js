@@ -299,18 +299,25 @@ class App extends Component {
           mPP: value,
           atp: "Decreases (Impaired)",
           atpClass: "dec",
+          atpSlider: [-1],
           rOS: "Increases by 40%",
           rOSClass: "inc",
+          rosSlider: [4],
           membranePotential: "Decreases",
           membranePotentialClass: "dec",
+          memPotSlider: [-1],
           calcium: "Increases (Intra-cellular)",
           calciumClass: "inc",
+          calciumSlider: [1],
           h2O2: "Increases",
           h2O2Class: "inc",
+          h2O2Slider: [1],
           dopaN: "Decreases by 25%",
           dopaNClass: "dec",
+          dopaNSlider: [-1],
           apoptosis: "Increases by 60%",
           apoptosisClass: "inc",
+          apopSlider: [1],
         });
         this.onDopChange([1], true);
         break;
@@ -372,19 +379,31 @@ class App extends Component {
           rosSlider: value,
 
           up: "Increases",
+          uPSlider: [1],
           atp: "Decreases",
+          atpSlider: [-1],
           h2O2: "increases",
+          h2O2Slider: [1],
           dopaN: "Decreases",
+          dopaNSlider: [-1],
           oxygen: "Decreases",
+          oxygenSlider: [-1],
           alphaSyn: "Increases",
+          alphaSynSlider: [1],
           apoptosis: "Increases",
+          apopSlider: [1],
           fissionFusion: "Alter",
+          fissionFusionSlider: [1],
           mtIntegrity: "Decreases",
           calcium: "Decrease in efflux",
+          calciumSlider: [1],
           membranePotential: "Decreases",
+          memPotSlider: [-1],
 
+          ptpSlider: [1],
           upClass: "inc",
           atpClass: "dec",
+
           h2O2Class: "inc",
           dopaNClass: "dec",
           oxygenClass: "dec",
@@ -424,6 +443,18 @@ class App extends Component {
 
           upClass: "inc",
           atpClass: "dec",
+          atpSlider: [-1],
+          uPSlider: [1],
+          h2O2Slider: [1],
+          apopSlider: [1],
+          dopaNSlider: [-1],
+          oxygenSlider: [-1],
+          alphaSynSlider: [1],
+          calciumSlider: [1],
+          memPotSlider: [-1],
+          ptpSlider: [1],
+          fissionFusionSlider: [1],
+
           h2O2Class: "inc",
           dopaNClass: "dec",
           oxygenClass: "dec",
@@ -459,6 +490,15 @@ class App extends Component {
           parkinStatus: "Less Phosphorylation",
           atp: "Decreases (Impaired)",
           atpClass: "dec",
+          atpSlider: [-2],
+          uPSlider: [1],
+          apopSlider: [1],
+          dopaNSlider: [-1],
+          oxygenSlider: [-1],
+          alphaSynSlider: [1],
+          calciumSlider: [1],
+          ptpSlider: [1],
+          rosSlider: [4],
           alphaSyn: "Increases",
           alphaSynClass: "inc",
           calcium: "Increases",
@@ -488,6 +528,16 @@ class App extends Component {
           parkinStatus: "Less Phosphorylation",
           atp: "Decreases by 60%",
           atpClass: "dec",
+          atpSlider: [-1],
+          uPSlider: [1],
+          ptpSlider: [1],
+          rosSlider: [4],
+          apopSlider: [1],
+          dopaNSlider: [-1],
+          calciumSlider: [1],
+          oxygenSlider: [-1],
+          alphaSynSlider: [1],
+
           alphaSyn: "Increases",
           alphaSynClass: "inc",
           calcium: "Increases",
@@ -517,6 +567,16 @@ class App extends Component {
           parkinStatus: "Less Phosphorylation",
           atp: "Decreases by 42%",
           atpClass: "dec",
+          atpSlider: [-1],
+          uPSlider: [1],
+          apopSlider: [1],
+          dopaNSlider: [-1],
+          oxygenSlider: [-1],
+          alphaSynSlider: [1],
+          calciumSlider: [1],
+          rosSlider: [4],
+          ptpSlider: [1],
+
           alphaSyn: "Increases",
           alphaSynClass: "inc",
           calcium: "Increases",
@@ -541,6 +601,8 @@ class App extends Component {
           memPotSlider: value,
           rOS: "Increases",
           rOSClass: "inc",
+          rosSlider: [4],
+
           //   Show parkinson disease
         });
         break;
@@ -584,6 +646,14 @@ class App extends Component {
           alphaSynClass: "inc",
           fissionFusion: "Altered",
           fissionFusionClass: "alter",
+          uPSlider: [1],
+          apopSlider: [1],
+          dopaNSlider: [-1],
+          oxygenSlider: [-1],
+          alphaSynSlider: [1],
+          calciumSlider: [1],
+          rosSlider: [4],
+          ptpSlider: [1],
         });
         break;
 
@@ -619,6 +689,14 @@ class App extends Component {
           alphaSynClass: "inc",
           fissionFusion: "Altered",
           fissionFusionClass: "alter",
+          uPSlider: [1],
+          apopSlider: [1],
+          dopaNSlider: [-1],
+          oxygenSlider: [-1],
+          alphaSynSlider: [1],
+          calciumSlider: [1],
+          rosSlider: [4],
+          ptpSlider: [1],
         });
         break;
 
@@ -628,46 +706,47 @@ class App extends Component {
     }
   };
 
-  onApopSliderChange = (value, skipReset) => {
-    !skipReset && this.resetAll();
+  //   onApopSliderChange = (value, skipReset) => {
+  //     !skipReset && this.resetAll();
 
-    switch (value[0]) {
-      case 1:
-        this.setState({
-          apopSlider: value,
-          pink1: [-2],
-          dJ1: [-1],
-          htrA2: [-1],
-          parkin: [-1],
-          uchl1: [-2],
-          mPP: [1],
+  //     switch (value[0]) {
+  //       case 1:
+  //         this.setState({
+  //           apopSlider: value,
+  //           pink1: [-2],
+  //           dJ1: [-1],
+  //           htrA2: [-1],
+  //           parkin: [-1],
+  //           uchl1: [-2],
+  //           mPP: [1],
 
-          calcium: "Increases",
-          calciumClass: "inc",
-          membranePotential: "Decreases",
-          membranePotentialClass: "dec",
-          oxygen: "Decreases",
-          oxygenClass: "dec",
-          rOS: "Increases",
-          rOSClass: "inc",
-          h2O2: "Increases",
-          h2O2Class: "inc",
-          dopaN: "Decreases",
-          dopaNClass: "dec",
-          up: "Increases",
-          upClass: "inc",
-          alphaSyn: "Increases",
-          alphaSynClass: "inc",
-          fissionFusion: "Altered",
-          fissionFusionClass: "alter",
-        });
-        break;
+  //           calcium: "Increases",
+  //           calciumClass: "inc",
+  //           membranePotential: "Decreases",
+  //           membranePotentialClass: "dec",
+  //           oxygen: "Decreases",
+  //           oxygenClass: "dec",
+  //           rOS: "Increases",
+  //           rOSClass: "inc",
+  //           h2O2: "Increases",
+  //           h2O2Class: "inc",
+  //           dopaN: "Decreases",
+  //           dopaNClass: "dec",
+  //           up: "Increases",
+  //           upClass: "inc",
+  //           alphaSyn: "Increases",
+  //           alphaSynClass: "inc",
+  //           fissionFusion: "Altered",
+  //           fissionFusionClass: "alter",
+  //           ptpSlider: [1],
+  //         });
+  //         break;
 
-      default:
-        this.setState({ apopSlider: value });
-        break;
-    }
-  };
+  //       default:
+  //         this.setState({ apopSlider: value });
+  //         break;
+  //     }
+  //   };
 
   onAlphaSChange = (value, skipReset) => {
     !skipReset && this.resetAll();
@@ -707,6 +786,17 @@ class App extends Component {
           upClass: "inc",
           fissionFusion: "Altered",
           fissionFusionClass: "alter",
+
+          uPSlider: [1],
+          apopSlider: [1],
+          dopaNSlider: [-1],
+          oxygenSlider: [-1],
+          calciumSlider: [1],
+          rosSlider: [4],
+          ptpSlider: [1],
+          memPotSlider: [-2],
+          h2O2Slider: [1],
+          fissionFusionSlider: [1],
         });
         break;
 
@@ -742,6 +832,12 @@ class App extends Component {
           dopaNClass: "dec",
           atp: "Decreases",
           atpClass: "dec",
+          dopaNSlider: [-1],
+          oxygenSlider: [-1],
+          rosSlider: [4],
+          memPotSlider: [-2],
+          h2O2Slider: [1],
+          ptpSlider: [1],
         });
         break;
 
@@ -775,8 +871,10 @@ class App extends Component {
           rOSClass: "inc",
           upClass: "inc",
           up: "Increases",
+          uPSlider: [1],
           fissionFusionClass: "alter",
           fissionFusion: "Altered",
+          fissionFusionSlider: [1],
           calcium: "Increases",
           calciumClass: "inc",
           calciumSlider: [1],
@@ -802,14 +900,18 @@ class App extends Component {
 
           calcium: "Increases",
           calciumClass: "inc",
+          calciumSlider: [1],
           membranePotential: "Decreases",
           membranePotentialClass: "dec",
+          memPotSlider: [-2],
           //   oxygen: "Decreases",
           //   oxygenClass: "dec",
           rOS: "Increases",
           rOSClass: "inc",
+          rosSlider: [4],
           dopaN: "Decreases",
           dopaNClass: "dec",
+          dopaNSlider: [-1],
           uchl1: [-1],
           parkin: [-1],
           alphaSyn: "Increases",
@@ -847,6 +949,13 @@ class App extends Component {
           fissionFusion: "Altered",
           atp: "Decreases",
           atpClass: "dec",
+
+          apopSlider: [1],
+          atpSlider: [-2],
+          calciumSlider: [1],
+          rosSlider: [4],
+          memPotSlider: [-2],
+          fissionFusionSlider: [1],
         });
         break;
 
@@ -879,6 +988,14 @@ class App extends Component {
           atpClass: "dec",
           dopaN: "Decreases",
           dopaNClass: "dec",
+
+          apopSlider: [1],
+          dopaNSlider: [-1],
+          calciumSlider: [1],
+          rosSlider: [4],
+          memPotSlider: [-2],
+          fissionFusionSlider: [1],
+          atpSlider: [-2],
         });
         break;
 
@@ -910,8 +1027,10 @@ class App extends Component {
           calciumSlider: [1],
           oxygen: "Decreases",
           oxygenClass: "dec",
+          oxygenSlider: [-1],
           atp: "Decreases",
           atpClass: "dec",
+          atpSlider: [-2],
           dopaN: "Decreases",
           dopaNSlider: [-1],
           dopaNClass: "dec",
@@ -923,6 +1042,36 @@ class App extends Component {
 
       default:
         this.setState({ fissionFusionSlider: value });
+        break;
+    }
+  };
+
+  onPTPChange = (value, skipReset) => {
+    !skipReset && this.resetAll();
+    switch (value[0]) {
+      case 1:
+        this.setState({
+          ptpSlider: value,
+
+          membranePotential: "Decreases",
+          membranePotentialClass: "dec",
+          memPotSlider: [-2],
+          rOS: "Increases",
+          rOSClass: "inc",
+          rosSlider: [3],
+          apoptosisClass: "inc",
+          apoptosis: "Increases",
+          apopSlider: [1],
+          calcium: "Increases",
+          calciumClass: "inc",
+          calciumSlider: [1],
+          atp: "Decreases",
+          atpClass: "dec",
+        });
+        break;
+
+      default:
+        this.setState({ ptpSlider: value });
         break;
     }
   };
@@ -950,6 +1099,7 @@ class App extends Component {
       uPSlider,
       atpSlider,
       apopSlider,
+      ptpSlider,
       dopaNSlider,
       alphaSynSlider,
       oxygenSlider,
@@ -962,6 +1112,7 @@ class App extends Component {
 
       up,
       atp,
+      ptp,
       rOS,
       h2O2,
       dopaN,
@@ -974,6 +1125,7 @@ class App extends Component {
       membranePotential,
 
       upClass,
+      ptpClass,
       atpClass,
       rOSClass,
       h2O2Class,
@@ -1014,6 +1166,7 @@ class App extends Component {
         <SecondCol
           up={up}
           atp={atp}
+          ptp={ptp}
           rOS={rOS}
           h2O2={h2O2}
           dopaN={dopaN}
@@ -1026,7 +1179,9 @@ class App extends Component {
           atpSlider={atpSlider}
           apopSlider={apopSlider}
           mtIntegrity={mtIntegrity}
+          ptpClass={ptpClass}
           dopaNSlider={dopaNSlider}
+          ptpSlider={ptpSlider}
           memPotSlider={memPotSlider}
           calciumSlider={calciumSlider}
           fissionFusion={fissionFusion}
@@ -1035,11 +1190,12 @@ class App extends Component {
           h2O2Slider={h2O2Slider}
           oxygenSlider={oxygenSlider}
           membranePotential={membranePotential}
+          onPTPChange={this.onPTPChange}
           onRosChange={this.onRosChange}
           onDopaNChange={this.onDopaNChange}
-          onUPSliderChange={this.onUPSliderChange}
           onMemPotChange={this.onMemPotChange}
           onAlphaSChange={this.onAlphaSChange}
+          onUPSliderChange={this.onUPSliderChange}
           onAtpSliderChange={this.onAtpSliderChange}
           onApopSliderChange={this.onApopSliderChange}
           onH2O2SliderChange={this.onH2O2SliderChange}
