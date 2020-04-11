@@ -119,6 +119,9 @@ export const initialState = {
   alphaSynSlider: 0,
   calciumSlider: 0,
   dopaNSlider: 0,
+  oxygenSlider: 0,
+  uPSlider: 0,
+  fissionFusionSlider: 0,
 
   dJ1Status: "",
   dopamineStatus: "",
