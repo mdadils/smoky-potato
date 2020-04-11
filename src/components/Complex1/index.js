@@ -7,7 +7,7 @@ const Complex1 = ({ name, status, className, value, onChange }) => {
   return (
     <div className={`c1 box with-slider effects-box ${name} ${className}`}>
       <div>{name}</div>
-      <span className="status">{status}</span>
+      <div className="status">{status}</div>
       <Row gutter={16}>
         <Col span={20}>
           <Slider
@@ -22,7 +22,7 @@ const Complex1 = ({ name, status, className, value, onChange }) => {
           />
         </Col>
         <Col span={4}>
-          <span className="slider-label">{!status && MarksC1[value]}</span>
+          <span className="slider-label">{MarksC1[value]}</span>
         </Col>
       </Row>
     </div>

@@ -71,3 +71,7 @@
   right: auto;
   transform: translate(-50%, 0);
 }
+
+.c1 .status {
+  height: 3em;
+}

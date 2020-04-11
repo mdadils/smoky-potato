@@ -40,6 +40,15 @@ class App extends Component {
           calciumClass: "dec",
           alphaSyn: "Increases",
           alphaSynClass: "inc",
+
+          apopSlider: [1],
+          oxygenSlider: [-1],
+          alphaSynSlider: [1],
+          calciumSlider: [1],
+          memPotSlider: [-2],
+          fissionFusionSlider: [1],
+          rosSlider: [4],
+          c1Slider: [-4],
         });
         // this.onParkinChange([-1], true);
         break;
@@ -63,6 +72,16 @@ class App extends Component {
           membranePotentialClass: "dec",
           alphaSyn: "Increases",
           alphaSynClass: "inc",
+          C1: "Decreases",
+          c1Class: "dec",
+          c1Slider: [-3],
+          rosSlider: [4],
+          atpSlider: [-1],
+          apopSlider: [1],
+          oxygenSlider: [-1],
+          alphaSynSlider: [1],
+          calciumSlider: [1],
+          memPotSlider: [-1],
         });
         // this.onParkinChange([-1], true);
         break;
@@ -91,6 +110,13 @@ class App extends Component {
           calciumClass: "inc",
           rOS: "Increases",
           rOSClass: "inc",
+          atpSlider: [-1],
+          apopSlider: [1],
+          calciumSlider: [1],
+          memPotSlider: [-1],
+          rosSlider: [2],
+          c1Slider: [-6],
+          h2O2Slider: [1],
         });
         break;
 
@@ -109,6 +135,13 @@ class App extends Component {
           calciumClass: "inc",
           rOS: "Increases",
           rOSClass: "inc",
+          C1: "Decreases",
+          c1Class: "dec",
+          apopSlider: [1],
+          calciumSlider: [1],
+          memPotSlider: [-1],
+          rosSlider: [4],
+          c1Slider: [-3],
         });
         break;
 
@@ -128,6 +161,8 @@ class App extends Component {
           calciumClass: "inc",
           h2O2: "Increases",
           h2O2Class: "inc",
+          calciumSlider: [1],
+          h2O2Slider: [1],
         });
         break;
 
@@ -136,6 +171,7 @@ class App extends Component {
           dopamine: value,
           alphaSyn: "Increases (If Dopamine is below 30%)",
           alphaSynClass: "inc",
+          alphaSynSlider: [1],
         });
         break;
 
@@ -144,6 +180,7 @@ class App extends Component {
           dopamine: value,
           rOS: "Increases",
           rOSClass: "inc",
+          rosSlider: [3],
         });
         break;
 
@@ -169,6 +206,13 @@ class App extends Component {
           dopaNClass: "dec",
           up: "Increases",
           upClass: "inc",
+
+          apopSlider: [1],
+          alphaSynSlider: [1],
+          rosSlider: [2],
+          h2O2Slider: [1],
+          uPSlider: [1],
+          dopaNSlider: [-1],
         });
         break;
 
@@ -185,6 +229,12 @@ class App extends Component {
           dopaNClass: "dec",
           up: "Increases",
           upClass: "inc",
+          apopSlider: [1],
+          alphaSynSlider: [1],
+          rosSlider: [2],
+          h2O2Slider: [1],
+          uPSlider: [1],
+          dopaNSlider: [-1],
         });
         break;
 
@@ -210,8 +260,20 @@ class App extends Component {
           fissionFusionClass: "alter",
           rOS: "Increases",
           rOSClass: "inc",
+          membranePotential: "Decreases",
+          membranePotentialClass: "dec",
           alphaSyn: "Increases",
           alphaSynClass: "inc",
+
+          apopSlider: [1],
+          atpSlider: [-1],
+          memPotSlider: [-1],
+          alphaSynSlider: [1],
+          rosSlider: [3],
+          uPSlider: [1],
+          dopaNSlider: [-1],
+          fissionFusionSlider: [1],
+          c1Slider: [-5],
         });
         break;
 
@@ -229,6 +291,12 @@ class App extends Component {
           upClass: "inc",
           rOS: "Increases",
           rOSClass: "inc",
+          alphaSynSlider: [1],
+          memPotSlider: [-1],
+          atpSlider: [-1],
+          rosSlider: [2],
+          uPSlider: [1],
+          fissionFusionSlider: [1],
           parkin: value,
         });
         break;
@@ -251,6 +319,9 @@ class App extends Component {
           alphaSynClass: "inc",
           rOS: "Increases",
           rOSClass: "inc",
+          rosSlider: [4],
+          alphaSynSlider: [1],
+          memPotSlider: [-1],
         });
         break;
       case -1:
@@ -262,6 +333,9 @@ class App extends Component {
           alphaSynClass: "inc",
           membranePotential: "Decreases",
           membranePotentialClass: "dec",
+          rosSlider: [3],
+          alphaSynSlider: [1],
+          memPotSlider: [-1],
         });
         break;
 
@@ -283,6 +357,9 @@ class App extends Component {
           dopaNClass: "dec",
           up: "Increases",
           upClass: "inc",
+          alphaSynSlider: [1],
+          dopaNSlider: [-1],
+          uPSlider: [1],
         });
         break;
 
