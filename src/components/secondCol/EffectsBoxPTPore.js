@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
 
+import StatusIcon from "../StatusIcon";
 import { MarksPTP, MarksApopNoName } from "../../utils/utils";
 
 const EffectsBoxPTPore = ({ name, status, className, value, onChange }) => {
@@ -25,6 +26,7 @@ const EffectsBoxPTPore = ({ name, status, className, value, onChange }) => {
           <span className="slider-label">{!status && MarksPTP[value]}</span>
         </Col>
       </Row>
+      <StatusIcon type={className} />
     </div>
   );
 };

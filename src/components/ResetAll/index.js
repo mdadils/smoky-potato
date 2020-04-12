@@ -9,7 +9,7 @@ const ResetAll = ({ onClick, isResetAllDisabled }) => {
       type="primary"
       shape="round"
       disabled={isResetAllDisabled}
-      icon={<ReloadOutlined />}
+      icon={<ReloadOutlined spin={!isResetAllDisabled} />}
       onClick={onClick}
     >
       ResetAll

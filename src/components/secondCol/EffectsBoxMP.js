@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
 
+import StatusIcon from "../StatusIcon";
 import { MarksMembranePot, MarksMembranePotNoName } from "../../utils/utils";
 
 const EffectsBoxMP = ({ name, status, className, value, onChange }) => {
@@ -27,6 +28,7 @@ const EffectsBoxMP = ({ name, status, className, value, onChange }) => {
           </span>
         </Col>
       </Row>
+      <StatusIcon type={className} />
     </div>
   );
 };

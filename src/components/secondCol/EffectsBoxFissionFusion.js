@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
 
+import StatusIcon from "../StatusIcon";
 import { MarksApop, MarksApopNoName } from "../../utils/utils";
 
 const EffectsBoxFissionFusion = ({
@@ -31,6 +32,7 @@ const EffectsBoxFissionFusion = ({
           <span className="slider-label">{!status && MarksApop[value]}</span>
         </Col>
       </Row>
+      <StatusIcon type={className} />
     </div>
   );
 };

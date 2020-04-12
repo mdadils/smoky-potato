@@ -39,6 +39,8 @@
 
 .app-container {
   padding: 1em;
+  width: 90vw;
+  margin: 0 auto;
 }
 
 .clear::after {
@@ -99,4 +101,64 @@
   transform: translate(-50%, 1em);
   background-color: #35c759;
   border-color: #35c759;
+}
+
+.status-icon {
+  position: absolute;
+  left: calc(100% + 0.25em);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: #eb2f96;
+}
+
+@keyframes increase-anim {
+  0% {
+    top: 70%;
+    opacity: 0;
+  }
+  25% {
+    top: 70%;
+    opacity: 1;
+  }
+  75% {
+    top: 30%;
+    opacity: 1;
+  }
+  100% {
+    top: 30%;
+    opacity: 0.2;
+  }
+}
+@keyframes decrease-anim {
+  0% {
+    top: 30%;
+    opacity: 0;
+  }
+  25% {
+    top: 30%;
+    opacity: 1;
+  }
+  75% {
+    top: 70%;
+    opacity: 1;
+  }
+  100% {
+    top: 70%;
+    opacity: 0.2;
+  }
+}
+
+.status-icon.dec {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: decrease-anim;
+  animation-duration: 4s;
+}
+
+.status-icon.inc {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: increase-anim;
+  animation-duration: 4s;
 }

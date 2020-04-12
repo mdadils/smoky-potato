@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
 
+import StatusIcon from "../StatusIcon";
 import { MarksROS, MarksRosNoName } from "../../utils/utils";
 
 const EffectsBoxRos = ({ name, status, className, value, onChange }) => {
@@ -25,6 +26,7 @@ const EffectsBoxRos = ({ name, status, className, value, onChange }) => {
           <span className="slider-label">{!status && MarksROS[value]}</span>
         </Col>
       </Row>
+      <StatusIcon type={className} />
     </div>
   );
 };
