@@ -1,11 +1,19 @@
 import React from "react";
-import { CaretUpFilled, CaretDownFilled } from "@ant-design/icons";
+import {
+  CaretUpFilled,
+  CaretDownFilled,
+  ExclamationCircleFilled,
+} from "@ant-design/icons";
 
 const StatusIcon = ({ className, type }) => {
   if (type === "dec") {
     return <CaretDownFilled className={`status-icon ${className} ${type}`} />;
   } else if (type === "inc") {
     return <CaretUpFilled className={`status-icon ${className} ${type}`} />;
+  } else if (type === "alter") {
+    return (
+      <ExclamationCircleFilled className={`status-icon ${className} ${type}`} />
+    );
   } else {
     return null;
   }

@@ -527,7 +527,7 @@ class App extends Component {
           alphaSynClass: "inc",
           apoptosisClass: "inc",
           mtIntegrityClass: "dec",
-          fissionFusionClass: "dec",
+          fissionFusionClass: "alter",
           membranePotentialClass: "dec",
           mppStatus: "Increases by 200%",
         });
@@ -578,7 +578,7 @@ class App extends Component {
           alphaSynClass: "inc",
           apoptosisClass: "inc",
           mtIntegrityClass: "dec",
-          fissionFusionClass: "dec",
+          fissionFusionClass: "alter",
           membranePotentialClass: "dec",
           mppStatus: "Increases by 500%",
         });
