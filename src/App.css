@@ -87,3 +87,16 @@
 .box.p2 {
   height: 10em;
 }
+
+.c1-wrp {
+  display: inline-block;
+  position: relative;
+}
+
+.reset-all {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 1em);
+  background-color: #35c759;
+  border-color: #35c759;
+}

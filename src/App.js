@@ -6,7 +6,6 @@ import "./App.css";
 import FirstColumn from "./components/firstcol";
 import SecondCol from "./components/secondCol";
 import C1 from "./components/Complex1";
-
 import { initialState } from "./utils/utils";
 
 class App extends Component {
@@ -19,6 +18,11 @@ class App extends Component {
 
   onPink1Change = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -2:
         this.setState({
@@ -94,6 +98,11 @@ class App extends Component {
 
   onDJ1Change = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -2:
         this.setState({
@@ -192,6 +201,11 @@ class App extends Component {
 
   onHtrA2Change = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -2:
         this.setState({
@@ -246,6 +260,11 @@ class App extends Component {
 
   onParkinChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -2:
         this.setState({
@@ -309,6 +328,11 @@ class App extends Component {
 
   onTrap1Change = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -2:
         this.setState({
@@ -347,6 +371,11 @@ class App extends Component {
 
   onUCHL1Change = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -1:
         this.setState({
@@ -371,6 +400,11 @@ class App extends Component {
 
   onMPPChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case 1:
         this.setState({
@@ -408,6 +442,10 @@ class App extends Component {
 
   onRosChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
 
     switch (value[0]) {
       case 0:
@@ -554,6 +592,10 @@ class App extends Component {
   onMemPotChange = (value, skipReset) => {
     !skipReset && this.resetAll();
 
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -3:
         this.setState({
@@ -693,6 +735,10 @@ class App extends Component {
   onAtpSliderChange = (value, skipReset) => {
     !skipReset && this.resetAll();
 
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -2:
         this.setState({
@@ -787,6 +833,10 @@ class App extends Component {
   //   onApopSliderChange = (value, skipReset) => {
   //     !skipReset && this.resetAll();
 
+  // this.setState({
+  //   isResetAllDisabled: false,
+  // });
+
   //     switch (value[0]) {
   //       case 1:
   //         this.setState({
@@ -828,6 +878,11 @@ class App extends Component {
 
   onAlphaSChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -1:
         this.setState({
@@ -887,6 +942,10 @@ class App extends Component {
   onCalciumSliderChange = (value, skipReset) => {
     !skipReset && this.resetAll();
 
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case 1:
         this.setState({
@@ -928,6 +987,11 @@ class App extends Component {
 
   onDopaNChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -1:
         this.setState({
@@ -967,6 +1031,11 @@ class App extends Component {
 
   onH2O2SliderChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case 1:
         this.setState({
@@ -1010,6 +1079,11 @@ class App extends Component {
 
   onOxygenSliderChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -1:
         this.setState({
@@ -1045,6 +1119,11 @@ class App extends Component {
 
   onUPSliderChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case 1:
         this.setState({
@@ -1261,6 +1340,7 @@ class App extends Component {
       mtIntegrity,
       fissionFusion,
       membranePotential,
+      isResetAllDisabled,
 
       c1Class,
       upClass,
@@ -1354,13 +1434,17 @@ class App extends Component {
           fissionFusionClass={fissionFusionClass}
           membranePotentialClass={membranePotentialClass}
         />
-        <C1
-          name="Complex-1 Activity"
-          className={c1Class}
-          status={c1}
-          value={c1Slider}
-          onChange={this.onC1Change}
-        />
+        <div className="c1">
+          <C1
+            onReset={this.resetAll}
+            name="Complex-1 Activity"
+            className={c1Class}
+            status={c1}
+            value={c1Slider}
+            isResetAllDisabled={isResetAllDisabled}
+            onChange={this.onC1Change}
+          />
+        </div>
       </div>
     );
   }

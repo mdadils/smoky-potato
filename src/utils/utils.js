@@ -149,6 +149,8 @@ export const initialState = {
   uPSlider: 0,
   fissionFusionSlider: 0,
 
+  isResetAllDisabled: true,
+
   dJ1Status: "",
   dopamineStatus: "",
   mppStatus: "",
