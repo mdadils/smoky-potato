@@ -4,10 +4,10 @@ import { Col, Row, Slider } from "antd";
 import StatusIcon from "../StatusIcon";
 import { MarksROS, MarksRosNoName } from "../../utils/utils";
 
-const EffectsBoxRos = ({ name, status, className, value, onChange }) => {
+const EffectsBoxRos = ({ status, className, value, onChange }) => {
   return (
-    <div className={`effects-box with-slider ros ${name} ${className}`}>
-      <div className="name">{name}</div>
+    <div className={`effects-box with-slider ros ROS ${className}`} id="ros">
+      <div className="name">ROS</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={20}>

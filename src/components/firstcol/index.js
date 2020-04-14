@@ -31,34 +31,54 @@ const FirstColumn = ({
 }) => {
   return (
     <div className="col-1 box-container">
-      <Factors4Points name="PINK1" onChange={onPink1Change} value={pink1} />
       <Factors4Points
+        name="PINK1"
+        onChange={onPink1Change}
+        value={pink1}
+        id="pink1"
+      />
+      <Factors4Points
+        id="parkin"
         name="PARKIN"
-        onChange={onParkinChange}
         value={parkin}
+        onChange={onParkinChange}
         status={parkinStatus}
       />
       <Factors4Points
+        id="dj1"
         name="DJ1"
         onChange={onDJ1Change}
         value={dJ1}
         status={dJ1Status}
       />
-      <Factors4Points name="TRAP1" onChange={onTrap1Change} value={trap1} />
       <Factors4Points
+        name="TRAP1"
+        onChange={onTrap1Change}
+        value={trap1}
+        id="trap1"
+      />
+      <Factors4Points
+        id="HTRA2"
         name="HTRA2"
         onChange={onHtrA2Change}
         value={htrA2}
         status={htrA2Status}
       />
-      <Factors4Points name="UCHL1" onChange={onUCHL1Change} value={uchl1} />
+      <Factors4Points
+        name="UCHL1"
+        onChange={onUCHL1Change}
+        value={uchl1}
+        id="uchl1"
+      />
       <Factors4PointsOX
         name="Dopamine"
+        id="dopamine"
         onChange={onDopChange}
         value={dopamine}
         status={dopamineStatus}
       />
       <Factors2Points
+        id="mpp"
         name="MPP⁺"
         onChange={onMPPChange}
         value={mPP}

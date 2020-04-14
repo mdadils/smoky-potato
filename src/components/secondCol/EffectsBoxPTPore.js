@@ -4,10 +4,10 @@ import { Col, Row, Slider } from "antd";
 import StatusIcon from "../StatusIcon";
 import { MarksPTP, MarksApopNoName } from "../../utils/utils";
 
-const EffectsBoxPTPore = ({ name, status, className, value, onChange }) => {
+const EffectsBoxPTPore = ({ status, className, value, onChange }) => {
   return (
-    <div className={`effects-box with-slider ptp ${name} ${className}`}>
-      <div className="name">{name}</div>
+    <div className={`effects-box with-slider ptp ${className}`} id="ptpore">
+      <div className="name">PTP Opening</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={16}>

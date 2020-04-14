@@ -14,7 +14,7 @@ const Complex1 = ({
   isResetAllDisabled,
 }) => {
   return (
-    <div className="c1-wrp">
+    <div className="c1-wrp" id="c1Wrp">
       <div className={` box with-slider effects-box ${name} ${className}`}>
         <div className="name">{name}</div>
         <div className="status">{status}</div>

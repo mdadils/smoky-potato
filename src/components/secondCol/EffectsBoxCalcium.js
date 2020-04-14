@@ -4,10 +4,13 @@ import { Col, Row, Slider } from "antd";
 import StatusIcon from "../StatusIcon";
 import { MarksCalcium, MarksApopNoName } from "../../utils/utils";
 
-const EffectsBoxCalcium = ({ name, status, className, value, onChange }) => {
+const EffectsBoxCalcium = ({ status, className, value, onChange }) => {
   return (
-    <div className={`effects-box with-slider calcium ${name} ${className}`}>
-      <div className="name">{name}</div>
+    <div
+      className={`effects-box with-slider calcium ${className}`}
+      id="calcium"
+    >
+      <div className="name">Calcium</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={14}>

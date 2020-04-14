@@ -72,21 +72,18 @@ const SecondCol = ({
   return (
     <div className="col-2 box-container" style={{ float: "right" }}>
       <EffectsBoxMP
-        name="ΔΨm"
         status={membranePotential}
         value={memPotSlider}
         className={membranePotentialClass}
         onChange={onMemPotChange}
       />
       <EffectsBoxATP
-        name="ATP"
         status={atp}
         className={atpClass}
         value={atpSlider}
         onChange={onAtpSliderChange}
       />
       <EffectsBoxRos
-        name="ROS"
         status={rOS}
         value={rosSlider}
         className={rOSClass}
@@ -94,56 +91,48 @@ const SecondCol = ({
       />
 
       <EffectsBoxAlphaSyn
-        name="α-Synuclein"
         status={alphaSyn}
         value={alphaSynSlider}
         onChange={onAlphaSChange}
         className={alphaSynClass}
       />
       <EffectsBoxCalcium
-        name="Calcium"
         status={calcium}
         className={calciumClass}
         onChange={onCalciumSliderChange}
         value={calciumSlider}
       />
       <EffectsBoxApoptosis
-        name="Apoptosis"
         status={apoptosis}
         value={apopSlider}
         onChange={onApopSliderChange}
         className={apoptosisClass}
       />
       <EffectsBoxDopaN
-        name="Dopaminergic Neuron"
         status={dopaN}
         className={dopaNClass}
         value={dopaNSlider}
         onChange={onDopaNChange}
       />
       <EffectsBoxH2O2
-        name="H₂O₂"
         status={h2O2}
         className={h2O2Class}
         value={h2O2Slider}
         onChange={onH2O2SliderChange}
       />
       <EffectsBoxOxygen
-        name="Oxygen Consumption"
         status={oxygen}
         className={oxygenClass}
         value={oxygenSlider}
         onChange={onOxygenSliderChange}
       />
       <EffectsBoxUP
-        name="Unfolded Protein"
         onChange={onUPSliderChange}
         status={up}
         className={upClass}
         value={uPSlider}
       />
       <EffectsBoxPTPore
-        name="PTP Opening"
         onChange={onPTPChange}
         status={ptp}
         className={ptpClass}
@@ -157,6 +146,7 @@ const SecondCol = ({
         value={fissionFusionSlider}
       />
       <EffectsBox
+        id="mtIntegrity"
         name="Mitochondrial Integrity"
         status={mtIntegrity}
         className={mtIntegrityClass}

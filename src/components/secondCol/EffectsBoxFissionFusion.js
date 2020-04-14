@@ -4,16 +4,10 @@ import { Col, Row, Slider } from "antd";
 import StatusIcon from "../StatusIcon";
 import { MarksApop, MarksApopNoName } from "../../utils/utils";
 
-const EffectsBoxFissionFusion = ({
-  name,
-  status,
-  className,
-  value,
-  onChange,
-}) => {
+const EffectsBoxFissionFusion = ({ status, className, value, onChange }) => {
   return (
-    <div className={`effects-box with-slider ${name} ${className}`}>
-      <div className="name">{name}</div>
+    <div className={`effects-box with-slider ff ${className}`} id="ff">
+      <div className="name">Fission-Fusion</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={16}>

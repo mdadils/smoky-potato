@@ -4,10 +4,13 @@ import { Col, Row, Slider } from "antd";
 import StatusIcon from "../StatusIcon";
 import { MarksApop, MarksApopNoName } from "../../utils/utils";
 
-const EffectsBoxApoptosis = ({ name, status, className, value, onChange }) => {
+const EffectsBoxApoptosis = ({ status, className, value, onChange }) => {
   return (
-    <div className={`effects-box with-slider ${name} ${className}`}>
-      <div className="name">{name}</div>
+    <div
+      className={`effects-box with-slider apoptosis ${className}`}
+      id="apoptosis"
+    >
+      <div className="name">Apoptosis</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={16}>

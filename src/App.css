@@ -41,6 +41,7 @@
   padding: 1em;
   width: 90vw;
   margin: 0 auto;
+  position: relative;
 }
 
 .clear::after {
@@ -193,4 +194,11 @@
   animation-iteration-count: infinite;
   animation-name: increase-anim;
   animation-duration: 4s;
+}
+
+.svg-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }

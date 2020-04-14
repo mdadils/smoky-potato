@@ -4,10 +4,13 @@ import { Col, Row, Slider } from "antd";
 import StatusIcon from "../StatusIcon";
 import { MarksMembraneAlphaSyn, MarksATPNoName } from "../../utils/utils";
 
-const EffectsBoxAlphaSyn = ({ name, status, className, value, onChange }) => {
+const EffectsBoxAlphaSyn = ({ status, className, value, onChange }) => {
   return (
-    <div className={`effects-box with-slider ${name} ${className}`}>
-      <div className="name">{name}</div>
+    <div
+      className={`effects-box with-slider alpha-syn ${className}`}
+      id="alphaSyn"
+    >
+      <div className="name">α-Synuclein</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={16}>

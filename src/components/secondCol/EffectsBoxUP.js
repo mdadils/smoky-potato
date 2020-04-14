@@ -4,10 +4,10 @@ import { Col, Row, Slider } from "antd";
 import StatusIcon from "../StatusIcon";
 import { MarksApop, MarksApopNoName } from "../../utils/utils";
 
-const EffectsBoxUP = ({ name, status, className, value, onChange }) => {
+const EffectsBoxUP = ({ status, className, value, onChange }) => {
   return (
-    <div className={`effects-box with-slider ${name} ${className}`}>
-      <div className="name">{name}</div>
+    <div className={`effects-box with-slider up ${className}`} id="ros">
+      <div className="name">Unfolded Protein</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
         <Col span={16}>

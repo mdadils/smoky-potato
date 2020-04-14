@@ -1445,6 +1445,12 @@ class App extends Component {
             onChange={this.onC1Change}
           />
         </div>
+        <div className="svg-container">
+          <svg viewBox="0 0 100 100" height="100%" id="svgDiagram">
+            <g id="markers"></g>
+            <g id="paths"></g>
+          </svg>
+        </div>
       </div>
     );
   }

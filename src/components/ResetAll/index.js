@@ -5,6 +5,7 @@ import { ReloadOutlined } from "@ant-design/icons";
 const ResetAll = ({ onClick, isResetAllDisabled }) => {
   return (
     <Button
+      id="resetAllBtn"
       className="reset-all"
       type="primary"
       shape="round"
