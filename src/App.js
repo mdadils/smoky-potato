@@ -44,6 +44,8 @@ class App extends Component {
           calciumClass: "dec",
           alphaSyn: "Increases",
           alphaSynClass: "inc",
+          fissionFusionClass: "alter",
+          fissionFusion: "Altered",
 
           apopSlider: [1],
           oxygenSlider: [-1],
@@ -162,6 +164,11 @@ class App extends Component {
 
   onDopChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+
+    this.setState({
+      isResetAllDisabled: false,
+    });
+
     switch (value[0]) {
       case -2:
         this.setState({
@@ -830,51 +837,54 @@ class App extends Component {
     }
   };
 
-  //   onApopSliderChange = (value, skipReset) => {
-  //     !skipReset && this.resetAll();
+  onApopSliderChange = (value, skipReset) => {
+    !skipReset && this.resetAll();
 
-  // this.setState({
-  //   isResetAllDisabled: false,
-  // });
+    this.setState({
+      isResetAllDisabled: false,
+    });
 
-  //     switch (value[0]) {
-  //       case 1:
-  //         this.setState({
-  //           apopSlider: value,
-  //           pink1: [-2],
-  //           dJ1: [-1],
-  //           htrA2: [-1],
-  //           parkin: [-1],
-  //           uchl1: [-2],
-  //           mPP: [1],
+    switch (value[0]) {
+      case 1:
+        this.setState({
+          apopSlider: value,
+          pink1: [-2],
+          dJ1: [-1],
+          htrA2: [-1],
+          parkin: [-1],
+          uchl1: [-2],
+          mPP: [1],
+          atpSlider: [-1],
+          atp: "Decreases",
+          atpClass: "dec",
 
-  //           calcium: "Increases",
-  //           calciumClass: "inc",
-  //           membranePotential: "Decreases",
-  //           membranePotentialClass: "dec",
-  //           oxygen: "Decreases",
-  //           oxygenClass: "dec",
-  //           rOS: "Increases",
-  //           rOSClass: "inc",
-  //           h2O2: "Increases",
-  //           h2O2Class: "inc",
-  //           dopaN: "Decreases",
-  //           dopaNClass: "dec",
-  //           up: "Increases",
-  //           upClass: "inc",
-  //           alphaSyn: "Increases",
-  //           alphaSynClass: "inc",
-  //           fissionFusion: "Altered",
-  //           fissionFusionClass: "alter",
-  //           ptpSlider: [1],
-  //         });
-  //         break;
+          calcium: "Increases",
+          calciumClass: "inc",
+          membranePotential: "Decreases",
+          membranePotentialClass: "dec",
+          oxygen: "Decreases",
+          oxygenClass: "dec",
+          rOS: "Increases",
+          rOSClass: "inc",
+          h2O2: "Increases",
+          h2O2Class: "inc",
+          dopaN: "Decreases",
+          dopaNClass: "dec",
+          up: "Increases",
+          upClass: "inc",
+          alphaSyn: "Increases",
+          alphaSynClass: "inc",
+          fissionFusion: "Altered",
+          fissionFusionClass: "alter",
+          ptpSlider: [1],
+        });
+        break;
 
-  //       default:
-  //         this.setState({ apopSlider: value });
-  //         break;
-  //     }
-  //   };
+      default:
+        this.setState({ apopSlider: value });
+        break;
+    }
+  };
 
   onAlphaSChange = (value, skipReset) => {
     !skipReset && this.resetAll();
@@ -1235,6 +1245,7 @@ class App extends Component {
 
   onC1Change = (value, skipReset) => {
     !skipReset && this.resetAll();
+    
     switch (value[0]) {
       case -6:
         this.setState({
@@ -1292,7 +1303,7 @@ class App extends Component {
   };
 
   resetAll = () => {
-    this.setState({ ...initialState });
+    // this.setState({ ...initialState });
   };
 
   render(props) {
