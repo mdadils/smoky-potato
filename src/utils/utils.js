@@ -11,6 +11,14 @@ export const Marks4Points = {
   "-1": "Low",
   0: "Normal",
 };
+
+export const Marks4PointsOE = {
+  "-2": "Mutate",
+  "-1": "Low",
+  0: "Normal",
+  1: "Over Expression",
+};
+
 export const MarksROS = {
   0: "Normal",
   1: "25%",
@@ -191,23 +199,29 @@ export const INITIAL_STATE = {
 
 export const FACTOR_WEIGHTAGE_MAP = {
   dJ10: 0,
+  dJ11: -2,
   "dJ1-1": 2.5,
   "dJ1-2": 5.5,
   mPP0: 0,
   mPP1: 6,
   htrA20: 0,
+  htrA21: -2.5,
   "htrA2-1": 2.5,
   "htrA2-2": 5,
   trap10: 0,
+  trap11: -7.5,
   "trap1-1": 3,
   "trap1-2": 6,
   uchl10: 0,
+  uchl11: -2,
   "uchl1-1": 2,
   "uchl1-2": 5.5,
   pink10: 0,
+  pink11: -2,
   "pink1-1": 2,
   "pink1-2": 4,
   parkin0: 0,
+  parkin1: -5,
   "parkin-1": 3,
   "parkin-2": 6,
   dopamine0: 0,

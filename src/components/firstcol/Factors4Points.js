@@ -2,7 +2,7 @@ import React from "react";
 
 import { Slider } from "antd";
 
-import { SliderStateClassMap, Marks4Points } from "../../utils/utils";
+import { SliderStateClassMap, Marks4PointsOE } from "../../utils/utils";
 
 const Factors = ({ value, onChange, name, status, id }) => {
   return (
@@ -11,12 +11,12 @@ const Factors = ({ value, onChange, name, status, id }) => {
       <div className="status">{status}</div>
       <Slider
         range
-        max={0}
+        max={1}
         min={-2}
         value={[value]}
         included={true}
         onChange={onChange}
-        marks={Marks4Points}
+        marks={Marks4PointsOE}
         tooltipVisible={false}
       />
     </div>
