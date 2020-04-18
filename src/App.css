@@ -207,3 +207,13 @@
   width: 100%;
   z-index: -1;
 }
+
+.prediction-wrp {
+  position: fixed;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 2em;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -2em);
+}
