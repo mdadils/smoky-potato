@@ -13,6 +13,7 @@ import EffectsBoxOxygen from "./EffectsBoxOxygen";
 import EffectsBoxUP from "./EffectsBoxUP";
 import EffectsBoxFissionFusion from "./EffectsBoxFissionFusion";
 import EffectsBoxPTPore from "./EffectsBoxPTPore";
+import C1 from "../Complex1";
 
 const SecondCol = ({
   up,
@@ -55,6 +56,11 @@ const SecondCol = ({
   onAtpSliderChange,
   onFissionFusionChange,
 
+  c1,
+  c1Class,
+  c1Slider,
+  onC1Change,
+
   upClass,
   atpClass,
   rOSClass,
@@ -71,6 +77,13 @@ const SecondCol = ({
 }) => {
   return (
     <div className="col-2 box-container" style={{ float: "right" }}>
+      <C1
+        name="Complex-1 Activity"
+        className={c1Class}
+        status={c1}
+        value={c1Slider}
+        onChange={onC1Change}
+      />
       <EffectsBoxMP
         status={membranePotential}
         value={memPotSlider}

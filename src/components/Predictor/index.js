@@ -1,6 +1,8 @@
 import React from "react";
 import { CaretDownFilled } from "@ant-design/icons";
 
+import ResetAll from "../ResetAll";
+
 const getMarkerPosition = ({ indicator }) => {
   if (indicator <= 0) {
     return "1rem";
@@ -23,7 +25,7 @@ const getMarkerPosition = ({ indicator }) => {
   }
 };
 
-const Predictor = ({ indicator }) => {
+const Predictor = ({ indicator, onReset, isResetAllDisabled }) => {
   return (
     <div className="prediction-wrp">
       <div className="title">Parkinson's Disease Risk-o-meter</div>
@@ -44,6 +46,7 @@ const Predictor = ({ indicator }) => {
         <div className="level l2">Moderate</div>
         <div className="level l3">High</div>
       </div>
+      <ResetAll onClick={onReset} isResetAllDisabled={isResetAllDisabled} />
     </div>
   );
 };

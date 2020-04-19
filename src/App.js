@@ -1353,7 +1353,12 @@ class App extends Component {
       FACTOR_WEIGHTAGE_MAP[`parkin${parkin}`] +
       FACTOR_WEIGHTAGE_MAP[`dopamine${dopamine}`];
 
-    this.setState({ parkinsonIndicator: computedValue });
+    const stateToSet =
+      computedValue <= 0
+        ? { ...HALF_RESET_STATE, parkinsonIndicator: computedValue }
+        : { parkinsonIndicator: computedValue };
+
+    this.setState({ ...stateToSet });
   };
 
   resetAll = (...props) => {
@@ -1493,6 +1498,12 @@ class App extends Component {
           onOxygenSliderChange={this.onOxygenSliderChange}
           onCalciumSliderChange={this.onCalciumSliderChange}
           onFissionFusionChange={this.onFissionFusionChange}
+          //   complex-1 Props START
+          c1={c1}
+          c1Class={c1Class}
+          c1Slider={c1Slider}
+          onC1Change={this.onC1Change}
+          // complex-1 Props END
           upClass={upClass}
           atpClass={atpClass}
           rOSClass={rOSClass}
@@ -1506,7 +1517,7 @@ class App extends Component {
           fissionFusionClass={fissionFusionClass}
           membranePotentialClass={membranePotentialClass}
         />
-        <div className="c1">
+        {/* <div className="c1">
           <C1
             onReset={this.resetAll}
             name="Complex-1 Activity"
@@ -1516,14 +1527,18 @@ class App extends Component {
             isResetAllDisabled={isResetAllDisabled}
             onChange={this.onC1Change}
           />
-        </div>
-        <Predictor indicator={parkinsonIndicator} />
-        <div className="svg-container">
+        </div> */}
+        <Predictor
+          indicator={parkinsonIndicator}
+          onReset={this.resetAll}
+          isResetAllDisabled={isResetAllDisabled}
+        />
+        {/* <div className="svg-container">
           <svg viewBox="0 0 100 100" height="100%" id="svgDiagram">
             <g id="markers"></g>
             <g id="paths"></g>
           </svg>
-        </div>
+        </div> */}
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row, Slider } from "antd";
 
 import { MarksC1, MarksC1NoName } from "../../utils/utils";
-import ResetAll from "../ResetAll";
+// import ResetAll from "../ResetAll";
 
 const Complex1 = ({
   name,
@@ -36,7 +36,7 @@ const Complex1 = ({
           </Col>
         </Row>
       </div>
-      <ResetAll onClick={onReset} isResetAllDisabled={isResetAllDisabled} />
+      {/* <ResetAll onClick={onReset} isResetAllDisabled={isResetAllDisabled} /> */}
     </div>
   );
 };
