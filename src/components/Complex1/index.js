@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
+import { QuestionCircleFilled } from "@ant-design/icons";
 
 import { MarksC1, MarksC1NoName } from "../../utils/utils";
 // import ResetAll from "../ResetAll";
@@ -10,12 +11,18 @@ const Complex1 = ({
   className,
   value,
   onChange,
+  showModalWithData,
+  infoModalKey,
   onReset,
   isResetAllDisabled,
 }) => {
   return (
     <div className="c1-wrp" id="c1Wrp">
       <div className={` box with-slider effects-box ${name} ${className}`}>
+        <QuestionCircleFilled
+          className="info-icon"
+          onClick={() => showModalWithData({ infoModalKey })}
+        />
         <div className="name">{name}</div>
         <div className="status">{status}</div>
         <Row gutter={16}>

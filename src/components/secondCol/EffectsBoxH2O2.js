@@ -1,12 +1,24 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
+import { QuestionCircleFilled } from "@ant-design/icons";
 
 import StatusIcon from "../StatusIcon";
 import { MarksApop, MarksApopNoName } from "../../utils/utils";
 
-const EffectsBoxH2O2 = ({ status, className, value, onChange }) => {
+const EffectsBoxH2O2 = ({
+  status,
+  className,
+  value,
+  onChange,
+  showModalWithData,
+  infoModalKey,
+}) => {
   return (
     <div className={`effects-box with-slider h2o2 ${className}`} id="h2o2">
+      <QuestionCircleFilled
+        className="info-icon"
+        onClick={() => showModalWithData({ infoModalKey })}
+      />
       <div className="name">H₂O₂</div>
       <span className="status">{status}</span>
       <Row gutter={16}>

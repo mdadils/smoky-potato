@@ -1501,6 +1501,7 @@ class App extends Component {
           onOxygenSliderChange={this.onOxygenSliderChange}
           onCalciumSliderChange={this.onCalciumSliderChange}
           onFissionFusionChange={this.onFissionFusionChange}
+          showModalWithData={this.showModalWithData}
           //   complex-1 Props START
           c1={c1}
           c1Class={c1Class}

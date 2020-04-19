@@ -1,12 +1,24 @@
 import React from "react";
 import { Col, Row, Slider } from "antd";
+import { QuestionCircleFilled } from "@ant-design/icons";
 
 import StatusIcon from "../StatusIcon";
 import { MarksApop, MarksApopNoName } from "../../utils/utils";
 
-const EffectsBoxFissionFusion = ({ status, className, value, onChange }) => {
+const EffectsBoxFissionFusion = ({
+  status,
+  className,
+  value,
+  onChange,
+  showModalWithData,
+  infoModalKey,
+}) => {
   return (
     <div className={`effects-box with-slider ff ${className}`} id="ff">
+      <QuestionCircleFilled
+        className="info-icon"
+        onClick={() => showModalWithData({ infoModalKey })}
+      />
       <div className="name">Fission-Fusion</div>
       <span className="status">{status}</span>
       <Row gutter={16}>

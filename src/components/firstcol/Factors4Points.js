@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Slider } from "antd";
-import { SliderStateClassMap, Marks4PointsOE } from "../../utils/utils";
-
 import { QuestionCircleFilled } from "@ant-design/icons";
+
+import { SliderStateClassMap, Marks4PointsOE } from "../../utils/utils";
 
 const Factors = ({
   value,

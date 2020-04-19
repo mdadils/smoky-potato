@@ -321,4 +321,69 @@ When low or mutated-there is an increase in- ROS, Apoptosis, Alpha-Synuclein, Un
   dopamine: `Upon oxidation it alters Parkin, DJ1, UCHL1.
 Upon oxidation ROS increases, Calcium (intracellular) increases.
 When its level drops down, Alpha-synuclein aggregation increases.`,
+
+  c1: `25% decrease in its activity is found in Platelets of PD patient.
+36% decrease in its activity is found in Substantia Nigra of PD patient.
+41% decrease in its activity is found in Frontal Cortex, Skeletal Muscle of PD patient.
+63% decrease in its activity is found in Leucocytes of PD patient.
+50% decrease in its activity is found in mutated PINK1.
+63% decrease in its activity is found in mutated Parkin.
+70% decrease in its activity is found in knockout DJ1.`,
+  ptp: `Pathological opening of it can lead or can be caused due to:
+-Low level of Membrane potential, ATP
+-High level of ROS, Calcium (Intracellular), Apoptosis.
+`,
+  up: `It can be increased due to low level of- Parkin, UCHL1, HTRA2
+`,
+  atp: `Mutated DJ1 causes 42% decrease in it.
+Mutated PINK1 causes 60% decrease in it.
+Mutated Parkin can cause decrease in it.
+MPP+ causes decrease in it.
+When Membrane potential decreases, it also gets decreased.
+Low level of it can cause pathological opening of PTP.
+`,
+  rOS: `Increase in it can cause or can be seen due to:
+-Low levels of- PINK1, Parkin, DJ1, HTRA2, TRAP1
+-High levels of- Dopamine, MPP+, Membrane Potential, H2O2 or pathological opening of PTP.
+Normal TRAP1 level checks ROS production and thereby stops Apoptosis.
+`,
+  h2O2: `It can be increased by 100% upon knockout of DJ1.
+It can be increased due to Oxidised Dopamine, MPP+.
+Upon increase it decreases Membrane potential by 17%.
+Upon increase it increases ROS.
+`,
+  dopaN: `Knockdown of Parkin causes 20% of decrease in it.
+Low level of HTRA2 causes decrease in it.
+Mutated UCHL1 causes it to decrease.
+MPP+ causes 25% decrease in it.
+`,
+  oxygen: `Can be decreased by 60% in mutated PINK1.
+`,
+  calcium: `Increased intracellular level can be caused due to low levels of- PINK1, DJ1; Oxidised Dopamine, High level of MPP+, ROS.
+Increased intracellular level can cause- Apoptosis, Pathological opening of PTP.
+`,
+  alphaSyn: `Low levels of- Parkin, TRAP1, HTRA2, Dopamine, mutated UCHL1- cause increased aggregation of it.
+Increased aggregation causes increase in- Calcium(intracellular) which ultimately leads to Apoptosis.
+Low level of it causes less release of Dopamine, interestingly it makes the cell MPTP (MPP+) resistant.
+`,
+  apoptosis: `It can be increased due to low level of- PINK1, TRAP1, DJ1, HTRA2; High level of MPP+, Intracellular Calcium, or Pathological opening of PTP.
+Normal level of TRAP1 blocks it.
+`,
+  mtIntegrity: `Decreases upon low level of PINK1.
+`,
+  fissionFusion: `PINK1, Parkin maintains its homeostasis.
+Low level of PINK1 causes increases in Fission.
+High Level of PINK1 causes increase in Fusion.
+Low level of Parkin alters it homeostasis.
+`,
+  membranePotential: `26% increase in it can cause PD.
+60% decrease is found in PD patient.
+Knockout DJ1 can cause 44% decrease in it.
+Mutated TRAP1 can cause 45% decrease in it.
+Mutated PINK1 can cause 50% decrease in it.
+When its level decreases, then there is less recruitment of Parkin.
+MPP+ causes it to decrease.
+When it becomes low, ATP level decreases, pathological opening of PTP.
+When it becomes high, ROS increases.
+`,
 };
