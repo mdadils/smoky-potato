@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import "./App.css";
 
-// import ConnectElements from "./react-connect-elements";
+import { Modal } from "antd";
 
 import FirstColumn from "./components/firstcol";
 import SecondCol from "./components/secondCol";
-import C1 from "./components/Complex1";
 import Predictor from "./components/Predictor";
 import {
   INITIAL_STATE,
   HALF_RESET_STATE,
+  MODAL_BODY_TEXT_MAP,
   FACTOR_WEIGHTAGE_MAP,
 } from "./utils/utils";
 
@@ -1364,10 +1364,12 @@ class App extends Component {
   resetAll = (...props) => {
     const isHalfReset11 = props && props[0]?.isHalfReset;
     const newState = isHalfReset11 ? HALF_RESET_STATE : INITIAL_STATE;
-    console.log(isHalfReset11);
-
     this.setState({ ...newState });
   };
+
+  hideModal = () => this.setState({ infoModalKey: null });
+
+  showModalWithData = ({ infoModalKey }) => this.setState({ infoModalKey });
 
   render(props) {
     const {
@@ -1458,6 +1460,7 @@ class App extends Component {
           onHtrA2Change={this.onHtrA2Change}
           onUCHL1Change={this.onUCHL1Change}
           onParkinChange={this.onParkinChange}
+          showModalWithData={this.showModalWithData}
         />
         <SecondCol
           up={up}
@@ -1517,17 +1520,6 @@ class App extends Component {
           fissionFusionClass={fissionFusionClass}
           membranePotentialClass={membranePotentialClass}
         />
-        {/* <div className="c1">
-          <C1
-            onReset={this.resetAll}
-            name="Complex-1 Activity"
-            className={c1Class}
-            status={c1}
-            value={c1Slider}
-            isResetAllDisabled={isResetAllDisabled}
-            onChange={this.onC1Change}
-          />
-        </div> */}
         <Predictor
           indicator={parkinsonIndicator}
           onReset={this.resetAll}
@@ -1539,6 +1531,19 @@ class App extends Component {
             <g id="paths"></g>
           </svg>
         </div> */}
+        <Modal
+          width="40%"
+          title="More information"
+          maskClosable={true}
+          visible={this.state.infoModalKey}
+          onOk={this.hideModal}
+          onCancel={this.hideModal}
+          footer={null}
+        >
+          <div className="inner-text">
+            {MODAL_BODY_TEXT_MAP[this.state.infoModalKey]}
+          </div>
+        </Modal>
       </div>
     );
   }

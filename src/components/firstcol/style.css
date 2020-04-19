@@ -3,6 +3,7 @@
   margin: 1em 0;
   text-align: center;
   border: 2px solid #ddd;
+  position: relative;
   border-radius: 4px;
   width: 20em;
 }

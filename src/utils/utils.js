@@ -157,6 +157,7 @@ export const INITIAL_STATE = {
   uPSlider: 0,
   fissionFusionSlider: 0,
 
+  infoModalKey: null,
   isResetAllDisabled: true,
   parkinsonIndicator: 0,
 
@@ -274,4 +275,50 @@ export const HALF_RESET_STATE = {
   mtIntegrityClass: "",
   fissionFusionClass: "",
   membranePotentialClass: "",
+};
+
+export const MODAL_BODY_TEXT_MAP = {
+  dJ1: `*  Its knockout does not cause Loss of Dopaminergic Neuron (one of the hallmarks of PD).
+*  Non-motor symptoms are dominant in DJ1 deficient PD.
+*  DJ1 in normal expression, blocks C-1 inhibitors like MPP+.
+*  When low or mutated-there is a decrease in- Membrane potential, ATP.
+*  When low or mutated-there is an increase in- ROS, Apoptosis, Calcium(intracellular), H2O2.`,
+  mPP: `It hampers C-1 activity.
+DJ1 in normal expression, blocks C-1 inhibitors like MPP+.
+It causes loss of Dopaminergic Neurons.
+It causes increase in ROS, apoptosis, oxidation of Dopamine, Calcium(intracellular).
+It causes decrease in Membrane potential, ATP generation.
+25% inhibition alters Complex-1 activity of Synaptic mitochondria.
+70% inhibition alters Complex-1 activity of Non-Synaptic mitochondria.`,
+  htrA2: `It partially substitutes for PINK1 loss.
+PINK1 phosphorylates it, but it can also be phosphorylated in PINK1 absence.
+Over-expression of TRAP1 compensates for its deficiency.
+When low or mutated-there is a decrease in- Dopaminergic Neuron.
+When low or mutated-there is an increase in- ROS, Apoptosis, Unfolded protein.`,
+  trap1: `Its over-expression compensates for PINK1 loss.
+Its over-expression compensates for Parkin loss.
+Its over-expression compensates for HTRA2 deficiency.
+Parkin compensates for its deficiency.
+When low or mutated-there is a decrease in- Membrane potential.
+When low or mutated-there is an increase in- ROS, Apoptosis, Alpha-Synuclein.`,
+  uchl1: `Deficiency causes Loss of Dopaminergic neurons.
+Deficiency causes increased aggregation of Alpha-synuclein.
+When low or mutated-there is a decrease in- Dopaminergic Neuron.
+When low or mutated-there is an increase in- Alpha-synuclein, Unfolded protein.`,
+  pink1: `*  Over-expression of Parkin compensates for its loss.
+*  Over-expression of TRAP1 compensates for its loss.
+*  HTRA2 partially substitute for its loss.
+*  It phosphorylates HTRA2, but HTRA2 can also be phosphorylated in its absence.
+*  When low or mutated- there is a decrease in- Membrane potential, ATP, Oxygen consumption, there is also low phosphorylation of Parkin, TRAP1, HTRA2.
+*  When low or mutated- there is an increase in- ROS, Alpha-synuclein, Apoptosis, Calcium (intracellular), Fission.`,
+  parkin: `Its over-expression compensates for PINK1 loss.
+Its over-expression compensates for TRAP1 deficiency.
+Loss of Parkin reversibly impairs C-1 deficiency.
+Its deficiency does not cause Lewy Body formation (one of the hallmarks of PD).
+Apart from Parkin, other proteins also present for Ubiquitination.
+When low or mutated-there is a decrease in- Membrane potential, ATP, Dopaminergic neuron.
+When low or mutated-there is an increase in- ROS, Apoptosis, Alpha-Synuclein, Unfolded protein, Fission-Fusion alter.`,
+  dopamine: `Upon oxidation it alters Parkin, DJ1, UCHL1.
+Upon oxidation ROS increases, Calcium (intracellular) increases.
+When its level drops down, Alpha-synuclein aggregation increases.`,
 };
