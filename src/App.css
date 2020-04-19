@@ -256,7 +256,7 @@
 .l3 {
   background: #e5221e;
   border-right: none;
-  border-radius: 0 50px 50px 0;
+  border-radius: 0 50px 50px 0px;
 }
 
 .indicator-marker {
