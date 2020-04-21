@@ -22,7 +22,7 @@ const EffectsBoxMP = ({
       <div className="name">ΔΨm</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
-        <Col span={20}>
+        <Col span={16}>
           <Slider
             range
             min={-3}
@@ -34,7 +34,7 @@ const EffectsBoxMP = ({
             marks={MarksMembranePotNoName}
           />
         </Col>
-        <Col span={4}>
+        <Col span={8}>
           <span className="slider-label">
             {!status && MarksMembranePot[value]}
           </span>

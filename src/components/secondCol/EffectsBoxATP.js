@@ -22,7 +22,7 @@ const EffectsBoxATP = ({
       <div className="name">ATP</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
-        <Col span={20}>
+        <Col span={16}>
           <Slider
             range
             min={-2}
@@ -34,7 +34,7 @@ const EffectsBoxATP = ({
             marks={MarksATPNoName}
           />
         </Col>
-        <Col span={4}>
+        <Col span={7} offset={1}>
           <span className="slider-label">{!status && MarksATP[value]}</span>
         </Col>
       </Row>

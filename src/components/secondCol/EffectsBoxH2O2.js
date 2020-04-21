@@ -22,7 +22,7 @@ const EffectsBoxH2O2 = ({
       <div className="name">H₂O₂</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
-        <Col span={14}>
+        <Col span={16}>
           <Slider
             range
             min={0}
@@ -34,7 +34,7 @@ const EffectsBoxH2O2 = ({
             marks={MarksApopNoName}
           />
         </Col>
-        <Col span={10}>
+        <Col span={8}>
           <span className="slider-label">{!status && MarksApop[value]}</span>
         </Col>
       </Row>

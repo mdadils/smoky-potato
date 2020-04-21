@@ -160,6 +160,7 @@ export const INITIAL_STATE = {
   infoModalKey: null,
   isResetAllDisabled: true,
   parkinsonIndicator: 0,
+  isLoading: false,
 
   dJ1Status: "",
   dopamineStatus: "",
@@ -202,7 +203,7 @@ export const FACTOR_WEIGHTAGE_MAP = {
   dJ10: 0,
   dJ11: -2,
   "dJ1-1": 2.5,
-  "dJ1-2": 5.5,
+  "dJ1-2": 6,
   mPP0: 0,
   mPP1: 6,
   htrA20: 0,
@@ -232,6 +233,8 @@ export const FACTOR_WEIGHTAGE_MAP = {
 };
 
 export const HALF_RESET_STATE = {
+  isLoading: false,
+
   c1Slider: 0,
   h2O2Slider: 0,
   atpSlider: 0,

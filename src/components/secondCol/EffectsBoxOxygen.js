@@ -18,11 +18,11 @@ const EffectsBoxOxygen = ({
       <QuestionCircleFilled
         className="info-icon"
         onClick={() => showModalWithData({ infoModalKey })}
-      />{" "}
+      />
       <div className="name">Oxygen Consumption</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
-        <Col span={14}>
+        <Col span={16}>
           <Slider
             range
             min={-1}
@@ -34,7 +34,7 @@ const EffectsBoxOxygen = ({
             marks={MarksDopaNNoName}
           />
         </Col>
-        <Col span={10}>
+        <Col span={8}>
           <span className="slider-label">{!status && MarksDopaN[value]}</span>
         </Col>
       </Row>

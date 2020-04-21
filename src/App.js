@@ -3,6 +3,7 @@ import "./App.css";
 
 import { Modal } from "antd";
 
+import Loader from "./components/Loader";
 import FirstColumn from "./components/firstcol";
 import SecondCol from "./components/secondCol";
 import Predictor from "./components/Predictor";
@@ -22,10 +23,13 @@ class App extends Component {
   }
 
   onPink1Change = (value, skipReset) => {
+    this.showLoaderWithAutoHide();
+
     switch (value[0]) {
       case -2:
         this.setState(
           {
+            isLoading: true,
             pink1: value,
             isResetAllDisabled: false,
             atpSlider: [-2],
@@ -66,6 +70,7 @@ class App extends Component {
         this.setState(
           {
             isResetAllDisabled: false,
+            isLoading: true,
             pink1: value,
             atp: "Decreases",
             atpClass: "dec",
@@ -100,7 +105,7 @@ class App extends Component {
 
       default:
         this.setState(
-          { pink1: value, isResetAllDisabled: false },
+          { pink1: value, isResetAllDisabled: false, isLoading: true },
           this.computeParkinsonIndicator
         );
         break;
@@ -108,12 +113,15 @@ class App extends Component {
   };
 
   onDJ1Change = (value, skipReset) => {
+    this.showLoaderWithAutoHide();
+
     switch (value[0]) {
       case -2:
         this.setState(
           {
             isResetAllDisabled: false,
             dJ1: value,
+            isLoading: true,
             atp: "Decreases by 42%",
             atpClass: "dec",
             h2O2: "Increases by 100%",
@@ -143,6 +151,7 @@ class App extends Component {
           {
             isResetAllDisabled: false,
             dJ1: value,
+            isLoading: true,
             atp: "Decreases",
             atpClass: "dec",
             h2O2: "Increases",
@@ -169,7 +178,7 @@ class App extends Component {
 
       default:
         this.setState(
-          { dJ1: value, isResetAllDisabled: false },
+          { dJ1: value, isResetAllDisabled: false, isLoading: true },
           this.computeParkinsonIndicator
         );
         break;
@@ -177,15 +186,15 @@ class App extends Component {
   };
 
   onDopChange = (value, skipReset) => {
-    this.setState({
-      isResetAllDisabled: false,
-    });
+    this.showLoaderWithAutoHide();
 
     switch (value[0]) {
       case -2:
         this.setState(
           {
             dopamine: value,
+            isResetAllDisabled: false,
+            isLoading: true,
             calcium: "Increased permeability",
             calciumClass: "inc",
             h2O2: "Increases",
@@ -201,6 +210,8 @@ class App extends Component {
         this.setState(
           {
             dopamine: value,
+            isResetAllDisabled: false,
+            isLoading: true,
             alphaSyn: "Increases (If Dopamine is below 30%)",
             alphaSynClass: "inc",
             alphaSynSlider: [1],
@@ -212,7 +223,9 @@ class App extends Component {
       case 1:
         this.setState(
           {
+            isResetAllDisabled: false,
             dopamine: value,
+            isLoading: true,
             rOS: "Increases",
             rOSClass: "inc",
             rosSlider: [3],
@@ -222,18 +235,24 @@ class App extends Component {
         break;
 
       default:
-        this.setState({ dopamine: value }, this.computeParkinsonIndicator);
+        this.setState(
+          { dopamine: value, isLoading: true, isResetAllDisabled: false },
+          this.computeParkinsonIndicator
+        );
         break;
     }
   };
 
   onHtrA2Change = (value, skipReset) => {
+    this.showLoaderWithAutoHide();
+
     switch (value[0]) {
       case -2:
         this.setState(
           {
             htrA2: value,
             isResetAllDisabled: false,
+            isLoading: true,
             alphaSyn: "Decreases",
             alphaSynClass: "dec",
             rOS: "Increases",
@@ -261,6 +280,7 @@ class App extends Component {
           {
             htrA2: value,
             isResetAllDisabled: false,
+            isLoading: true,
             alphaSyn: "Decreases",
             alphaSynClass: "dec",
             rOS: "Increases",
@@ -284,7 +304,7 @@ class App extends Component {
 
       default:
         this.setState(
-          { htrA2: value, isResetAllDisabled: false },
+          { htrA2: value, isResetAllDisabled: false, isLoading: true },
           this.computeParkinsonIndicator
         );
         break;
@@ -292,6 +312,8 @@ class App extends Component {
   };
 
   onParkinChange = (value, skipReset) => {
+    this.showLoaderWithAutoHide();
+
     switch (value[0]) {
       case -2:
         this.setState(
@@ -299,6 +321,7 @@ class App extends Component {
             parkin: value,
             isResetAllDisabled: false,
             atp: "Decreases",
+            isLoading: true,
             atpClass: "dec",
             dopaN: "Decreases by 20%",
             dopaNClass: "dec",
@@ -334,6 +357,7 @@ class App extends Component {
             isResetAllDisabled: false,
             membranePotentialClass: "dec",
             atp: "Decreases",
+            isLoading: true,
             atpClass: "dec",
             alphaSyn: "Increases",
             alphaSynClass: "inc",
@@ -357,7 +381,7 @@ class App extends Component {
 
       default:
         this.setState(
-          { parkin: value, isResetAllDisabled: false },
+          { parkin: value, isLoading: true, isResetAllDisabled: false },
           this.computeParkinsonIndicator
         );
         break;
@@ -365,12 +389,15 @@ class App extends Component {
   };
 
   onTrap1Change = (value, skipReset) => {
+    this.showLoaderWithAutoHide();
+
     switch (value[0]) {
       case -2:
         this.setState(
           {
             trap1: value,
             isResetAllDisabled: false,
+            isLoading: true,
             membranePotential: "Decreases by 45%",
             membranePotentialClass: "dec",
             alphaSyn: "Increases",
@@ -390,6 +417,7 @@ class App extends Component {
             isResetAllDisabled: false,
             trap1: value,
             rOS: "Increases by 100%",
+            isLoading: true,
             rOSClass: "inc",
             alphaSyn: "Increases",
             alphaSynClass: "inc",
@@ -405,7 +433,7 @@ class App extends Component {
 
       default:
         this.setState(
-          { trap1: value, isResetAllDisabled: false },
+          { trap1: value, isResetAllDisabled: false, isLoading: true },
           this.computeParkinsonIndicator
         );
         break;
@@ -413,11 +441,14 @@ class App extends Component {
   };
 
   onUCHL1Change = (value, skipReset) => {
+    this.showLoaderWithAutoHide();
+
     switch (value[0]) {
       case -1:
         this.setState(
           {
             uchl1: value,
+            isLoading: true,
             isResetAllDisabled: false,
             alphaSyn: "Increases",
             alphaSynClass: "inc",
@@ -435,7 +466,7 @@ class App extends Component {
 
       default:
         this.setState(
-          { uchl1: value, isResetAllDisabled: false },
+          { uchl1: value, isResetAllDisabled: false, isLoading: true },
           this.computeParkinsonIndicator
         );
         break;
@@ -448,6 +479,7 @@ class App extends Component {
         this.setState(
           {
             mPP: value,
+            isLoading: true,
             isResetAllDisabled: false,
             atp: "Decreases (Impaired)",
             atpClass: "dec",
@@ -474,22 +506,28 @@ class App extends Component {
           () => {
             this.onDopChange([1], true);
             this.computeParkinsonIndicator();
+            this.showLoaderWithAutoHide();
           }
         );
         break;
 
       default:
-        this.setState({ mPP: value, isResetAllDisabled: false });
+        this.setState(
+          {
+            mPP: value,
+            isResetAllDisabled: false,
+            isLoading: true,
+          },
+          this.showLoaderWithAutoHide
+        );
         break;
     }
   };
 
   onRosChange = (value, skipReset) => {
-    !skipReset && this.resetAll();
+    this.showLoaderWithAutoHide();
 
-    this.setState({
-      isResetAllDisabled: false,
-    });
+    !skipReset && this.resetAll();
 
     switch (value[0]) {
       case 0:
@@ -499,21 +537,27 @@ class App extends Component {
       case 1:
         this.setState({
           mPP: [1],
+          isLoading: true,
           rosSlider: value,
+          isResetAllDisabled: false,
           mppStatus: "Increases by 50%",
         });
         break;
       case 2:
         this.setState({
           mPP: [1],
+          isLoading: true,
           rosSlider: value,
+          isResetAllDisabled: false,
           mppStatus: "Increases by 60%",
         });
         break;
       case 3:
         this.setState({
           mPP: [1],
+          isLoading: true,
           rosSlider: value,
+          isResetAllDisabled: false,
           mppStatus: "Increases by 95%",
           trap1: [-1],
         });
@@ -521,7 +565,9 @@ class App extends Component {
       case 4:
         this.setState({
           mPP: [1],
+          isLoading: true,
           rosSlider: value,
+          isResetAllDisabled: false,
           mppStatus: "Increases by 100%",
           trap1: [-1],
         });
@@ -537,6 +583,8 @@ class App extends Component {
           parkin: [-1],
           dopamine: [1],
           rosSlider: value,
+          isLoading: true,
+          isResetAllDisabled: false,
 
           up: "Increases",
           uPSlider: [1],
@@ -589,6 +637,8 @@ class App extends Component {
           parkin: [-1],
           dopamine: [1],
           rosSlider: value,
+          isLoading: true,
+          isResetAllDisabled: false,
 
           up: "Increases",
           atp: "Decreases",
@@ -630,13 +680,18 @@ class App extends Component {
         });
         break;
       default:
-        this.setState({ rosSlider: value });
+        this.setState({
+          rosSlider: value,
+          isResetAllDisabled: false,
+          isLoading: true,
+        });
         break;
     }
   };
 
   onMemPotChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+    this.showLoaderWithAutoHide();
 
     this.setState({
       isResetAllDisabled: false,
@@ -645,6 +700,7 @@ class App extends Component {
     switch (value[0]) {
       case -3:
         this.setState({
+          isLoading: true,
           memPotSlider: value,
           pink1: [-2],
           dJ1: [-2],
@@ -684,6 +740,7 @@ class App extends Component {
         break;
       case -2:
         this.setState({
+          isLoading: true,
           memPotSlider: value,
           pink1: [-2],
           parkin: [-1],
@@ -725,6 +782,7 @@ class App extends Component {
       case -1:
         this.setState({
           memPotSlider: value,
+          isLoading: true,
           pink1: [-1],
           parkin: [-1],
           dJ1: [-2],
@@ -763,11 +821,13 @@ class App extends Component {
       case 0:
         this.setState({
           memPotSlider: value,
+          isLoading: true,
         });
         break;
       case 1:
         this.setState({
           memPotSlider: value,
+          isLoading: true,
           rOS: "Increases",
           rOSClass: "inc",
           rosSlider: [4],
@@ -776,13 +836,14 @@ class App extends Component {
         });
         break;
       default:
-        this.setState({ memPotSlider: value });
+        this.setState({ memPotSlider: value, isLoading: true });
         break;
     }
   };
 
   onAtpSliderChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+    this.showLoaderWithAutoHide();
 
     this.setState({
       isResetAllDisabled: false,
@@ -792,6 +853,7 @@ class App extends Component {
       case -2:
         this.setState({
           atpSlider: value,
+          isLoading: true,
           pink1: [-2],
           parkin: [-2],
           memPotSlider: [-2],
@@ -834,6 +896,7 @@ class App extends Component {
       case -1:
         this.setState({
           atpSlider: value,
+          isLoading: true,
 
           memPotSlider: [-1],
           pink1: [-1],
@@ -876,21 +939,20 @@ class App extends Component {
         break;
 
       default:
-        this.setState({ atpSlider: value });
+        this.setState({ atpSlider: value, isLoading: true });
         break;
     }
   };
 
   onApopSliderChange = (value, skipReset) => {
     !skipReset && this.resetAll();
-
-    this.setState({
-      isResetAllDisabled: false,
-    });
+    this.showLoaderWithAutoHide();
 
     switch (value[0]) {
       case 1:
         this.setState({
+          isLoading: true,
+          isResetAllDisabled: false,
           apopSlider: value,
           pink1: [-2],
           dJ1: [-1],
@@ -926,13 +988,18 @@ class App extends Component {
         break;
 
       default:
-        this.setState({ apopSlider: value });
+        this.setState({
+          apopSlider: value,
+          isLoading: true,
+          isResetAllDisabled: false,
+        });
         break;
     }
   };
 
   onAlphaSChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+    this.showLoaderWithAutoHide();
 
     switch (value[0]) {
       case -1:
@@ -940,6 +1007,7 @@ class App extends Component {
           isResetAllDisabled: false,
           alphaSynSlider: value,
           dopamine: [-1],
+          isLoading: true,
           dopamineStatus: "Reduced release",
           mPP: [0],
           mppStatus: "Resistant",
@@ -949,6 +1017,7 @@ class App extends Component {
       case 1:
         this.setState({
           alphaSynSlider: value,
+          isLoading: true,
           pink1: [-1],
           parkin: [-1],
           trap1: [-1],
@@ -988,18 +1057,24 @@ class App extends Component {
         break;
 
       default:
-        this.setState({ alphaSynSlider: value, isResetAllDisabled: false });
+        this.setState({
+          alphaSynSlider: value,
+          isResetAllDisabled: false,
+          isLoading: true,
+        });
         break;
     }
   };
 
   onCalciumSliderChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+    this.showLoaderWithAutoHide();
 
     switch (value[0]) {
       case 1:
         this.setState({
           calciumSlider: value,
+          isLoading: true,
           pink1: [-1],
           dJ1: [-1],
           mPP: [1],
@@ -1032,13 +1107,18 @@ class App extends Component {
         break;
 
       default:
-        this.setState({ calciumSlider: value, isResetAllDisabled: false });
+        this.setState({
+          calciumSlider: value,
+          isResetAllDisabled: false,
+          isLoading: true,
+        });
         break;
     }
   };
 
   onDopaNChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+    this.showLoaderWithAutoHide();
 
     switch (value[0]) {
       case -1:
@@ -1068,23 +1148,30 @@ class App extends Component {
           calcium: "Increases",
           calciumClass: "inc",
           calciumSlider: [1],
+          isLoading: true,
           isResetAllDisabled: false,
         });
         break;
 
       default:
-        this.setState({ dopaNSlider: value, isResetAllDisabled: false });
+        this.setState({
+          dopaNSlider: value,
+          isResetAllDisabled: false,
+          isLoading: true,
+        });
         break;
     }
   };
 
   onH2O2SliderChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+    this.showLoaderWithAutoHide();
 
     switch (value[0]) {
       case 1:
         this.setState({
           h2O2Slider: value,
+          isLoading: true,
           dJ1: [-2],
           dJ1Status: "(When H2O2 increased by 100%)",
           dopamine: [-2],
@@ -1119,18 +1206,24 @@ class App extends Component {
         break;
 
       default:
-        this.setState({ h2O2Slider: value, isResetAllDisabled: false });
+        this.setState({
+          h2O2Slider: value,
+          isLoading: true,
+          isResetAllDisabled: false,
+        });
         break;
     }
   };
 
   onOxygenSliderChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+    this.showLoaderWithAutoHide();
 
     switch (value[0]) {
       case -1:
         this.setState({
           oxygenSlider: value,
+          isLoading: true,
           pink1: [-2],
           membranePotential: "Decreases",
           membranePotentialClass: "dec",
@@ -1156,18 +1249,24 @@ class App extends Component {
         break;
 
       default:
-        this.setState({ oxygenSlider: value, isResetAllDisabled: false });
+        this.setState({
+          oxygenSlider: value,
+          isLoading: true,
+          isResetAllDisabled: false,
+        });
         break;
     }
   };
 
   onUPSliderChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+    this.showLoaderWithAutoHide();
 
     switch (value[0]) {
       case 1:
         this.setState({
           uPSlider: value,
+          isLoading: true,
           parkin: [-1],
           uchl1: [-2],
           htrA2: [-1],
@@ -1197,17 +1296,24 @@ class App extends Component {
         break;
 
       default:
-        this.setState({ uPSlider: value, isResetAllDisabled: false });
+        this.setState({
+          uPSlider: value,
+          isLoading: true,
+          isResetAllDisabled: false,
+        });
         break;
     }
   };
 
   onFissionFusionChange = (value, skipReset) => {
+    this.showLoaderWithAutoHide();
     !skipReset && this.resetAll();
+
     switch (value[0]) {
       case 1:
         this.setState({
           fissionFusionSlider: value,
+          isLoading: true,
           isResetAllDisabled: false,
           parkin: [-1],
           pink1: [-2],
@@ -1240,6 +1346,7 @@ class App extends Component {
 
       default:
         this.setState({
+          isLoading: true,
           fissionFusionSlider: value,
           isResetAllDisabled: false,
         });
@@ -1249,11 +1356,14 @@ class App extends Component {
 
   onPTPChange = (value, skipReset) => {
     !skipReset && this.resetAll();
+    this.showLoaderWithAutoHide();
+
     switch (value[0]) {
       case 1:
         this.setState({
           ptpClass: "alter",
           ptpSlider: value,
+          isLoading: true,
           isResetAllDisabled: false,
           membranePotential: "Decreases",
           membranePotentialClass: "dec",
@@ -1273,18 +1383,20 @@ class App extends Component {
         break;
 
       default:
-        this.setState({ ptpSlider: value });
+        this.setState({ ptpSlider: value, isLoading: true });
         break;
     }
   };
 
   onC1Change = (value, skipReset) => {
     !skipReset && this.resetAll();
+    this.showLoaderWithAutoHide();
 
     switch (value[0]) {
       case -6:
         this.setState({
           c1Slider: value,
+          isLoading: true,
           isResetAllDisabled: false,
           dJ1: [-2],
           pink1: [-2],
@@ -1297,6 +1409,7 @@ class App extends Component {
       case -5:
         this.setState({
           c1Slider: value,
+          isLoading: true,
           isResetAllDisabled: false,
           parkin: [-2],
           pink1: [-2],
@@ -1306,6 +1419,7 @@ class App extends Component {
       case -4:
         this.setState({
           c1Slider: value,
+          isLoading: true,
           isResetAllDisabled: false,
           pink1: [-2],
         });
@@ -1314,6 +1428,7 @@ class App extends Component {
       case -3:
         this.setState({
           c1Slider: value,
+          isLoading: true,
           isResetAllDisabled: false,
           c1: "41% inhibition is found in frontal cortex of a PD patient",
         });
@@ -1322,6 +1437,7 @@ class App extends Component {
       case -2:
         this.setState({
           c1Slider: value,
+          isLoading: true,
           isResetAllDisabled: false,
           c1: "36% inhibition is found in Substantia Nigra of a PD patient",
         });
@@ -1330,6 +1446,7 @@ class App extends Component {
       case -1:
         this.setState({
           c1Slider: value,
+          isLoading: true,
           isResetAllDisabled: false,
           c1: "25% inhibition is found in Platelet of a PD patient",
           mPP: [1],
@@ -1338,7 +1455,11 @@ class App extends Component {
         break;
 
       default:
-        this.setState({ c1Slider: value, isResetAllDisabled: false });
+        this.setState({
+          c1Slider: value,
+          isLoading: true,
+          isResetAllDisabled: false,
+        });
         break;
     }
   };
@@ -1382,6 +1503,12 @@ class App extends Component {
 
   showModalWithData = ({ infoModalKey }) => this.setState({ infoModalKey });
 
+  showLoaderWithAutoHide = () => {
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 800);
+  };
+
   render(props) {
     const {
       dJ1,
@@ -1413,6 +1540,7 @@ class App extends Component {
       htrA2Status,
       dopamineStatus,
 
+      isLoading,
       parkinsonIndicator,
 
       c1,
@@ -1449,6 +1577,7 @@ class App extends Component {
 
     return (
       <div className="app-container clear">
+        <Loader isLoading={isLoading} />
         <FirstColumn
           dJ1={dJ1}
           mPP={mPP}
