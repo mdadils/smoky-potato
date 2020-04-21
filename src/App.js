@@ -566,6 +566,7 @@ class App extends Component {
 
           h2O2Class: "inc",
           dopaNClass: "dec",
+          ptpClass: "alter",
           oxygenClass: "dec",
           calciumClass: "dec",
           alphaSynClass: "inc",
@@ -617,6 +618,7 @@ class App extends Component {
 
           h2O2Class: "inc",
           dopaNClass: "dec",
+          ptpClass: "alter",
           oxygenClass: "dec",
           calciumClass: "dec",
           alphaSynClass: "inc",
@@ -663,6 +665,7 @@ class App extends Component {
           calciumSlider: [1],
           ptpSlider: [1],
           rosSlider: [4],
+          ptpClass: "alter",
           alphaSyn: "Increases",
           alphaSynClass: "inc",
           calcium: "Increases",
@@ -703,6 +706,7 @@ class App extends Component {
           alphaSynSlider: [1],
 
           alphaSyn: "Increases",
+          ptpClass: "alter",
           alphaSynClass: "inc",
           calcium: "Increases",
           calciumClass: "inc",
@@ -744,6 +748,7 @@ class App extends Component {
           alphaSyn: "Increases",
           alphaSynClass: "inc",
           calcium: "Increases",
+          ptpClass: "alter",
           calciumClass: "inc",
           dopaN: "Decreases",
           dopaNClass: "dec",
@@ -814,6 +819,7 @@ class App extends Component {
           alphaSynClass: "inc",
           fissionFusion: "Altered",
           fissionFusionClass: "alter",
+          ptpClass: "alter",
           uPSlider: [1],
           apopSlider: [1],
           dopaNSlider: [-1],
@@ -857,6 +863,7 @@ class App extends Component {
           alphaSynClass: "inc",
           fissionFusion: "Altered",
           fissionFusionClass: "alter",
+          ptpClass: "alter",
           uPSlider: [1],
           apopSlider: [1],
           dopaNSlider: [-1],
@@ -912,6 +919,7 @@ class App extends Component {
           alphaSyn: "Increases",
           alphaSynClass: "inc",
           fissionFusion: "Altered",
+          ptpClass: "alter",
           fissionFusionClass: "alter",
           ptpSlider: [1],
         });
@@ -960,6 +968,7 @@ class App extends Component {
           dopaN: "Decreases",
           dopaNClass: "dec",
           up: "Increases",
+          ptpClass: "alter",
           upClass: "inc",
           fissionFusion: "Altered",
           fissionFusionClass: "alter",
@@ -1004,6 +1013,7 @@ class App extends Component {
           oxygenClass: "dec",
           rOS: "Increases",
           rOSClass: "inc",
+          ptpClass: "alter",
           h2O2: "Increases",
           h2O2Class: "inc",
           dopaN: "Decreases",
@@ -1242,6 +1252,7 @@ class App extends Component {
     switch (value[0]) {
       case 1:
         this.setState({
+          ptpClass: "alter",
           ptpSlider: value,
           isResetAllDisabled: false,
           membranePotential: "Decreases",
@@ -1536,7 +1547,7 @@ class App extends Component {
           width="40%"
           title="More information"
           maskClosable={true}
-          visible={this.state.infoModalKey}
+          visible={!!this.state.infoModalKey}
           onOk={this.hideModal}
           onCancel={this.hideModal}
           footer={null}
