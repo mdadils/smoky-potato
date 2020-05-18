@@ -39,7 +39,7 @@ const Complex1 = ({
             />
           </Col>
           <Col span={4}>
-            <span className="slider-label">{MarksC1[value]}</span>
+            <span className="slider-label">{!status && MarksC1[value]}</span>
           </Col>
         </Row>
       </div>
