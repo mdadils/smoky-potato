@@ -4,8 +4,6 @@ import Factors4Points from "./Factors4Points";
 import Factors2Points from "./Factors2Points";
 import Factors4PointsOX from "./Factors4Points_Ox";
 
-import "./style.css";
-
 const FirstColumn = ({
   dJ1,
   mPP,
@@ -28,38 +26,75 @@ const FirstColumn = ({
   onUCHL1Change,
   dopamineStatus,
   onParkinChange,
+  showModalWithData,
 }) => {
   return (
     <div className="col-1 box-container">
-      <Factors4Points name="Pink1" onChange={onPink1Change} value={pink1} />
       <Factors4Points
-        name="Parkin"
-        onChange={onParkinChange}
+        name="PINK1"
+        infoModalKey="pink1"
+        showModalWithData={showModalWithData}
+        onChange={onPink1Change}
+        value={pink1}
+        id="pink1"
+      />
+      <Factors4Points
+        id="parkin"
+        infoModalKey="parkin"
+        name="PARKIN"
         value={parkin}
+        showModalWithData={showModalWithData}
+        onChange={onParkinChange}
         status={parkinStatus}
       />
       <Factors4Points
+        infoModalKey="dJ1"
+        id="dj1"
         name="DJ1"
+        showModalWithData={showModalWithData}
         onChange={onDJ1Change}
         value={dJ1}
         status={dJ1Status}
       />
-      <Factors4Points name="Trap1" onChange={onTrap1Change} value={trap1} />
       <Factors4Points
-        name="HtrA2"
+        infoModalKey="trap1"
+        name="TRAP1"
+        showModalWithData={showModalWithData}
+        onChange={onTrap1Change}
+        value={trap1}
+        id="trap1"
+      />
+      <Factors4Points
+        id="HTRA2"
+        infoModalKey="htrA2"
+        name="HTRA2"
+        showModalWithData={showModalWithData}
         onChange={onHtrA2Change}
         value={htrA2}
         status={htrA2Status}
       />
-      <Factors4Points name="Uchl1" onChange={onUCHL1Change} value={uchl1} />
+      <Factors4Points
+        infoModalKey="uchl1"
+        name="UCHL1"
+        showModalWithData={showModalWithData}
+        onChange={onUCHL1Change}
+        value={uchl1}
+        id="uchl1"
+      />
       <Factors4PointsOX
+        infoModalKey="dopamine"
         name="Dopamine"
+        id="dopamine"
+        showModalWithData={showModalWithData}
         onChange={onDopChange}
         value={dopamine}
         status={dopamineStatus}
       />
       <Factors2Points
-        name="mPP"
+        infoModalKey="mPP"
+        id="mpp"
+        showModalWithData={showModalWithData}
+        name="MPP⁺"
         onChange={onMPPChange}
         value={mPP}
         status={mppStatus}
