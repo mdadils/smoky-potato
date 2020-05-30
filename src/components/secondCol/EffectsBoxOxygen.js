@@ -34,7 +34,7 @@ const EffectsBoxOxygen = ({
             marks={MarksDopaNNoName}
           />
         </Col>
-        <Col span={8}>
+        <Col span={7}>
           <span className="slider-label">{!status && MarksDopaN[value]}</span>
         </Col>
       </Row>

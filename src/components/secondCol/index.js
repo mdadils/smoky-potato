@@ -15,6 +15,8 @@ import EffectsBoxFissionFusion from "./EffectsBoxFissionFusion";
 import EffectsBoxPTPore from "./EffectsBoxPTPore";
 import C1 from "../Complex1";
 
+const showMtIntegrity = false;
+
 const SecondCol = ({
   up,
   atp,
@@ -185,14 +187,16 @@ const SecondCol = ({
         className={fissionFusionClass}
         value={fissionFusionSlider}
       />
-      <EffectsBox
-        showModalWithData={showModalWithData}
-        id="mtIntegrity"
-        infoModalKey="mtIntegrity"
-        name="Mitochondrial Integrity"
-        status={mtIntegrity}
-        className={mtIntegrityClass}
-      />
+      {showMtIntegrity && (
+        <EffectsBox
+          showModalWithData={showModalWithData}
+          id="mtIntegrity"
+          infoModalKey="mtIntegrity"
+          name="Mitochondrial Integrity"
+          status={mtIntegrity}
+          className={mtIntegrityClass}
+        />
+      )}
     </div>
   );
 };

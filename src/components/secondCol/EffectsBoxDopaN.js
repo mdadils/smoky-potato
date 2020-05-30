@@ -22,7 +22,7 @@ const EffectsBoxDopaN = ({
       <div className="name">Dopaminergic Neuron</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
-        <Col span={14}>
+        <Col span={16}>
           <Slider
             range
             min={-1}
@@ -34,7 +34,7 @@ const EffectsBoxDopaN = ({
             marks={MarksDopaNNoName}
           />
         </Col>
-        <Col span={10}>
+        <Col span={7}>
           <span className="slider-label">{!status && MarksDopaN[value]}</span>
         </Col>
       </Row>

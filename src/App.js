@@ -571,7 +571,7 @@ class App extends Component {
       case -2:
         this.setState(
           {
-            uchl1: value,
+            uchl1: [-2],
             isLoading: true,
             isResetAllDisabled: false,
             alphaSyn: "Increases",
@@ -595,7 +595,7 @@ class App extends Component {
             h2O2Slider: [1],
             apopSlider: [1],
             rosSlider: [3],
-            memPotSlider: [-4],
+            memPotSlider: [-3],
             alphaSynSlider: [1],
             dopaNSlider: [-1],
             uPSlider: [1],

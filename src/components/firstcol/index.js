@@ -4,8 +4,6 @@ import Factors4Points from "./Factors4Points";
 import Factors2Points from "./Factors2Points";
 import Factors4PointsOX from "./Factors4Points_Ox";
 
-import "./style.css";
-
 const FirstColumn = ({
   dJ1,
   mPP,

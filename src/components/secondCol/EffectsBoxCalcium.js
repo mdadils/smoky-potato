@@ -25,7 +25,7 @@ const EffectsBoxCalcium = ({
       <div className="name">Calcium</div>
       <span className="status">{status}</span>
       <Row gutter={16}>
-        <Col span={14}>
+        <Col span={16}>
           <Slider
             range
             min={0}
@@ -37,7 +37,7 @@ const EffectsBoxCalcium = ({
             marks={MarksApopNoName}
           />
         </Col>
-        <Col span={10}>
+        <Col span={7}>
           <span className="slider-label">{!status && MarksCalcium[value]}</span>
         </Col>
       </Row>
